@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="guitarra, musica, tablaturas, tutoriales, articulos, reportajes" />
+		<meta name="author" content="Ruben Martinez Vilar" />
+		<meta name="description" content="Material para guitarristas" />
+		<title>Tremolo: Material para guitarristas - Formulario Guitarras</title>
+		
+		<!-- Hojas de estilo -->
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/impresion.css" media="print" />
+		<link rel="stylesheet" type="text/css" href="css/movil.css" media="handheld" />
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/funcionesJS.js"></script>
+		<script type="text/javascript" src="js/formulario.js"></script>
+	</head>
+  
+	<body>
+		<!-- Establece el ancho fijo -->
+		<div id="wrapper" >
+
+			<!-- Cabecera de la web -->
+			<header id="cabecera">
+			
+					<div id="logo">
+						<a href="index.html" title="Tremolo, material para guitarristas">
+							<h1>Tremolo</h1>
+							<p>material para guitarristas</p>
+						</a>
+					</div>
+				
+				<!-- Menu de navegacion -->
+				<nav class="menu">
+					<ul>
+						<li><a href="index.html" title="Portada" tabindex="1" >Portada</a></li>
+						<li><a href="noticias.html" title="Noticias" >Noticias</a></li>
+						<li><a href="articulos.html" title="Articulos" >Art&iacute;culos</a></li>
+						<li><a href="analisis.html" title="Analisis" >An&aacute;lisis</a></li>
+						<li><a href="taller.html" title="Taller" >Taller</a>
+							<ul class="ocultaMovil">
+								<li><a href="taller_afinacion.html" title="Afinacion" >Afinaci&oacute;n</a></li>
+								<li><a href="taller_limpieza.html" title="Limpieza" >Limpieza</a></li>
+								<li><a href="taller_pastillas.html" title="Cambio de pastillas" >Cambio de pastillas</a></li>
+							</ul>
+						</li>
+						<li><a href="lecciones.html" title="Lecciones" >Lecciones</a>
+							<ul class="ocultaMovil">
+								<li ><a href="lecciones_acordes.html" title="Acordes" >Acordes</a></li>
+								<li><a href="lecciones_calentamiento.html" title="Calentamiento" >Calentamiento</a></li>
+								<li><a href="lecciones_escalas.html" title="Escalas" >Escalas</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html" title="Sobre el sitio" >Sobre el sitio</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			<section id="formularioGuitarra">
+				<form name="formulario" action="recomendacionFender.html">
+						<hgroup>
+							<h1>&iquest;Quieres saber cu&aacute;l es la guitarra adecuada para ti?</h1>
+							<h2>Rellena el siguiente formulario para averiguarlo.</h2>	
+						</hgroup>
+						
+						<h3>&iquest;Qu&eacute; tipo de m&uacute;sica sueles escuchar?</h3>
+						<select required>
+							<option value="">- Escoge una opci&oacute;n -</option>
+							<option id="tipomusica1" value="bluesjazz">Blues/Jazz</option>
+							<option id="tipomusica2" value="metal">Heavy/Power metal</option>
+							<option id="tipomusica3" value="rock">Rock cl&aacute;sico</option>
+						</select>
+						
+						<h3>&iquest;Qu&eacute; te gustar&iacute;a de una guitarra?</h3>
+						<input type="radio"  name="sonido" id="sonido1" required />
+							<p><label for="sonido1">&nbsp;&nbsp;Que tenga un sonido c&aacute;lido y limpio</label></p><br />
+						<input type="radio"  name="sonido" id="sonido2" required />
+							<p><label for="sonido2">&nbsp;&nbsp;Que meta mucha ca&ntilde;a y permita hacer sonidos extra&ntilde;os</label></p><br />
+						<input type="radio"  name="sonido" id="sonido3" required />
+							<p><label for="sonido3">&nbsp;&nbsp;Que me permita hacer un poco de todo</label></p><br />
+						
+						<h3>Eres...</h3>
+						<input type="radio" name="mano" id="zurdo" required />
+							<p><label for="zurdo">&nbsp;&nbsp;Zurdo</label></p><br />
+						<input type="radio" name="mano" id="diestro" required />
+							<p><label for="diestro">&nbsp;&nbsp;Diestro</label></p><br />
+						
+						<button type="submit" class="boton botonEnviar" style="margin-top:25px;" onClick="cambiaURL()" >Enviar</button>
+				</form>
+
+			</section>
+			
+			<!-- Pie de pagina, informacion legal -->
+			<footer id="piePagina">
+				Web dise&ntilde;ada por <a href="https://plus.google.com/102700179471987451637" title="Ruben Martinez Vilar" target="_blank"><strong>Rub&eacute;n Mart&iacute;nez Vilar</strong></a>.<br />
+				Iconos sociales por <a href="http://www.wpzoom.com" title="David Ferreira" target="_blank"><strong>David Ferreira</strong></a>.
+			</footer>
+		</div>
+	</body>
+  
+</html>

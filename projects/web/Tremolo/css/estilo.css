@@ -1,0 +1,720 @@
+/* Elimina todos los margenes y padding por defecto
+ * despues en cada elemento independientemente se
+ * agregara si se desea */
+* {
+	margin: 0;
+	padding: 0;
+}
+/* Los elementos block nos aseguran que cada uno se muestre como una nueva linea
+ * o renglon en el flujo de la pagina */
+header, nav, section, article, aside, footer{
+	display: block;
+}
+body {
+	font: 12px Arial, Tahoma, Verdana, sans-serif;
+	width: 100%;
+	/* Imagen de fondo */
+	background: #383838 url(../img/mosaico.jpg);
+}
+/* ENLACES E IMAGENES
+-----------------------------------------------------------------------------*/
+a {
+	color: #15578A;
+	outline: none;
+	text-decoration: none;
+}
+a:visited {
+	color: #42158A;
+	outline: none;
+	text-decoration: none;
+}
+a:hover {
+	outline: none;
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+/* CONTENEDOR PRINCIPAL
+-----------------------------------------------------------------------------*/
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding: 5px;
+	position: relative;
+	top: 20px;
+}
+
+/* CABECERA
+-----------------------------------------------------------------------------*/
+#cabecera{
+	overflow:hidden;
+	clear:both;
+}
+
+/* Para las fuentes del logo utilizo las almacenadas en la carpeta tipografias,
+ * de esta manera siempre van a estar diponibles.
+ * Las declaramos con la siguitente regla. */
+@font-face {  
+  font-family:LinLibertine_aDRS;
+  src: url( ../tipografias/LinLibertine_aDRS.ttf );  
+}
+
+@font-face {  
+  font-family:LinLibertine_RZ;
+  
+  src: url( ../tipografias/LinLibertine_RZ.ttf );  
+}
+
+#logo {
+	color:#FFFFFF;
+	float:right;
+	margin-right:10px;
+	text-align:center;
+	text-transform: uppercase;
+}
+#logo a{ color:#FFFFFF; }
+
+#logo h1 {
+	font-family: LinLibertine_aDRS, verdana, helvetica, sans-serif;
+	font-size: 65px;
+	font-weight:normal;
+}
+
+#logo p {
+	font-family: LinLibertine_RZ, verdana, helvetica, sans-serif;  
+	font-size: 16px;
+	color:#FFFFFF;
+}
+
+/* MENU PRINCIPAL
+-----------------------------------------------------------------------------*/
+.menu{
+	float:left;
+	border:none;
+	border:0px;
+	margin:0px;
+	margin-top:22px;
+	margin-left:45px;
+	padding:0px;
+	font: 12px Verdana, Helvetica, Arial, Tahoma, Verdana, sans-serif;
+	font-weight:bold;
+	}
+.menu ul{
+	background-image: linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -o-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -moz-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -webkit-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -ms-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -webkit-gradient(linear, left bottom,	left top,
+	color-stop(0.1, rgb(233,141,4)), color-stop(0.88, rgb(233,184,48)));
+	background-color:#e9b830;
+	
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	
+
+	border:1px solid #f09311;
+	color:#1D1D1D;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	list-style:none;
+	
+	height:30px;
+	margin:0;
+	padding:0;
+	}
+	.menu li{
+		float:left;
+		padding:0px;
+		}
+	/* Elementos primarios del menu */
+	.menu li a{
+		background-image: linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+		background-image: -o-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+		background-image: -moz-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+		background-image: -webkit-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+		background-image: -ms-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+		background-image: -webkit-gradient(linear, left bottom,	left top,
+		color-stop(0.1, rgb(233,141,4)), color-stop(0.88, rgb(233,184,48)));
+		background-color:#e9b830;
+		
+		color:#2D2D2D;
+		display:block;
+		font-weight:bold;
+		line-height:30px;
+		margin:0px;
+		padding:0px 15px;
+		text-align:center;
+		text-decoration:none;
+		}
+		/* Fondo de elementos al pasar raton */
+		.menu li a:hover, .menu ul li:hover a{
+			background-image: linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+			background-image: -o-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+			background-image: -moz-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+			background-image: -webkit-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+			background-image: -ms-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+			background-image: -webkit-gradient(linear, left bottom, left top,
+			color-stop(0.1, rgb(233,184,48)),color-stop(0.88, rgb(233,141,4)));
+			background-color:#e98d04;
+			
+			text-decoration:none;
+			}
+	/* Menus emergentes */
+	.menu li ul{
+		background:#252525;
+		
+		/* Para eliminar el radius de 4px de arriba*/
+		border-radius:0px;
+		-moz-border-radius:0px;
+		-webkit-border-radius:0px;
+		
+		display:none;
+		height:auto;
+		padding:0px;
+		margin:0px;
+		border:0px;
+		position:absolute;
+		width:155px;
+		z-index:200;
+		/*top:1em;
+		/*left:0;*/
+		}
+	.menu li:hover ul{
+		display:block;
+		}
+	.menu li li {
+		display:block;
+		float:none;
+		margin:0px;
+		padding:0px;
+		width:155px;
+		}
+	.menu li:hover li a{
+		background:none;
+		color: #F1F1F1;
+		}
+	.menu li ul a{
+		display:block;
+		height:30px;
+		font-size:12px;
+		font-style:normal;
+		margin:0px;
+		padding:0px 10px 0px 15px;
+		text-align:left;
+		}
+		/* Al pasar el raton por elementos de menus emergentes */
+		.menu li ul a:hover, .menu li ul li:hover a{
+			background:#5E5E5E;
+			border:0px;
+			color:#ffffff;
+			text-decoration:none;
+			}
+	.menu p{
+		clear:left;
+		}
+		
+/* CONTENEDOR ZONA CENTRAL
+-----------------------------------------------------------------------------*/
+#zonaCentral{
+	overflow:hidden;
+	width:100%;
+	clear:both;
+	margin-top:20px;
+}
+
+/* PANEL LATERAL
+-----------------------------------------------------------------------------*/
+#panelD {
+	float:right;
+	width:230px;
+	margin-right:20px;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Caja de busqueda */
+#cajaBusqueda{
+	width: 195px;
+	height: 20px;
+	padding-left: 5px;
+	margin-left:15px;
+	clear:both;
+	border:none;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+/* Newsletter */
+#boletinPortada{
+	margin-top:50px;
+}
+#cajaBoletin{
+	width: 195px;
+	height: 20px;
+	float:left;
+	clear:both;
+	margin-left:15px;
+	border: none;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+#condiciones{
+	font-size: 11px;
+	float:left;
+	color:#FFFFFF;
+	margin-top:5px;
+	margin-left:18px;
+}
+#condiciones a { color:#E99F17;	font-weight:bold; }
+#condiciones a:visited { color:#E99F17; }
+#condicionesCheckbox { float:left; clear:right; margin-top:4px; margin-left:5px;}
+fieldset { border:none; clear:both; }
+
+#suscripcionBoletin{
+	font-size: 30px;
+	font-weight:bold;
+	width: 500px;
+	padding: 15px;
+	margin:0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	
+	text-align:center;
+	color:#FFFFFF;
+	
+	border:none;
+}
+
+/* Acceso a formulario de guitarra en panel lateral */
+#enlaceFormGuitarra{
+	margin-top:50px;
+}
+
+#enlaceFormGuitarra p a{
+	font-size: 28px;
+	font-weight:bold;
+	text-align:center;
+	color:#FCC931;
+}
+
+/* Pagina de formulario
+-----------------------------------------------------------------------------*/
+#formularioGuitarra{
+	font: 12px Tahoma, Verdana, sans-serif;
+	width: 550px;
+	padding: 15px;
+	margin:0 auto;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	
+	text-align:left;
+	color:#FFFFFF;
+	
+	border:none;
+}
+
+#formularioGuitarra hgroup{
+	text-align:center;
+	margin-bottom:20px;
+}
+
+#formularioGuitarra h3{
+	font-size:12px;
+	font-weight:bold;
+	margin-top:15px;
+}
+
+#formularioGuitarra p, input{
+	float:left;
+}
+
+
+/* Titulos
+-----------------------------------------------------------------------------*/
+.tituloSeccion{
+	width: 685px;
+	float: left;
+	margin-bottom:8px;
+	text-transform: uppercase;
+
+}
+.tituloSeccion h1, .tituloSeccion h1 a{
+	font-size: 25px;
+	font-weight:normal;
+	color:#FCC931;
+	float:left;
+}
+.tituloPanel{
+	font-size: 1.5em;
+	font-weight:bold;
+	margin: 10px;
+	margin-top: 35px;
+	color:#FCC931;
+}
+
+/* Contenido, articulos
+-----------------------------------------------------------------------------*/
+#destacados {
+	width: 655px;
+	height: 150px;
+	margin-bottom:20px;
+	padding: 15px;
+	float: left;
+	border:0px;
+
+	/* Apariencia*/
+	background: #FFFFFF;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	
+	/* Brillo */
+	box-shadow: 0px 0px 10px #B5B5B5;
+	-moz-box-shadow: 0px 0px 10px #B5B5B5;
+	-webkit-box-shadow: 0px 0px 10px #B5B5B5;
+	
+}
+#destacados img {
+	float:left;
+	width: 150px;
+	height: 150px;
+	margin-left: 11px;
+	border: 0px;
+	
+	/* Sombra */
+	box-shadow: 0px 0px 5px #2D2D2D;
+	-moz-box-shadow: 0px 0px 5px #2D2D2D;
+	-webkit-box-shadow: 0px 0px 5px #2D2D2D;
+	
+}
+/* Caja transparente para las descripcion de los destacados */
+.cajaTrans {
+	position:absolute;
+	width:150px;
+	height:50px;
+	margin-top:100px;
+	background-color:#ffffff;
+	border:none;
+	border:0px;
+	/* Transparencia en las cajas con texto*/
+	opacity:0.8;
+}
+
+/* Colocamos cada caja de texto segun el margen izquierdo */
+#caja1 { margin-left:11px; }
+#caja2 { margin-left:172px; }
+#caja3 { margin-left:333px; }
+#caja4 { margin-left:494px; }
+
+/* Tipografias de las cajas destacadas */
+.cajaTrans p {
+	font-size: 1.5em;
+	font-weight:bold;
+	color:#313131;
+	margin-top:5px;
+	text-align:center;
+}
+
+/* Contenedor que engloba tanto los destacados como las noticias, articulos, etc. */
+#contenidos {
+	width: 655px;
+	float: left;
+	padding: 15px;
+	margin-bottom: 20px;
+	border:none;
+	border:0px;
+	
+	/* Apariencia*/
+	background: #FFFFFF;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	
+	/* Brillo */
+	box-shadow: 0px 0px 10px #B5B5B5;
+	-moz-box-shadow: 0px 0px 10px #B5B5B5;
+	-webkit-box-shadow: 0px 0px 10px #B5B5B5;
+}
+
+/* Resumenes de noticias y articulos */
+.resumen{
+	clear: both;
+	float:left;
+	width:100%;
+	text-align: justify;
+	color: #000000;
+}
+.resumen:hover{
+	background-color:#E0E0E0;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+}
+.resumen img {
+	float:left;
+}
+.resumen a {
+	color:#000000;
+}
+.resumen p{
+	float:right;
+	font-family: Verdana, sans-serif;
+	max-width:550px;
+	margin-left:10px;
+	text-align:justify;
+}
+.resumen h2{
+	float:left;
+	margin-left:15px;
+}
+.enlaceNoticia{
+	font-weight:bold;
+	font-size: 1.2em;
+	color: #15578A;
+}
+
+/* Articulos, noticias, etc. */
+.articulo h2{
+	color:#313131;
+	text-align: center;
+	width:100%;
+	text-transform: uppercase;
+	margin-bottom:10px;
+}
+.articulo h3{
+	color:#313131;
+	clear:both;
+	width:100%;
+	margin-top:15px;
+	text-transform: uppercase;
+	margin-bottom:5px;
+}
+.articulo p {
+	font-family: Verdana, sans-serif;
+	text-align: justify;
+	color: #000000;
+}
+.articulo p:first-letter{
+	margin-left:40px;
+}
+/* Margenes entre parrafos, a partir del segundo */
+.articulo p+p {
+	margin-top:10px;
+}
+.articulo ul li{
+	font-family: Verdana, sans-serif;
+	margin-left:50px;
+	color: #000000;
+}
+
+/* Pie de articulo */
+.pieArticulo{
+	font: 0.8em Verdana, sans-serif;
+	float:right;
+	font-weight:bold;
+	text-align:right;
+}
+
+/* Para colocar imagenes y otros objetos */
+.align-right {
+	float:right;
+	margin: 0 0 15px 15px;
+}
+.align-left {
+	float:left;
+	margin: 0 15px 15px 0;
+}
+.align-center {
+	display: block;
+	clear:both;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+/* Marco para imagenes y otros objetos */
+.frame {
+	padding: 5px;
+	border: 1px solid #aaa;
+} 
+
+/* Separadores */
+hr{
+	clear:both;
+	float:left;
+	border: 0;
+	color: #9E9E9E;
+	margin-top:5px;
+	margin-bottom:5px;
+	background-color: #9E9E9E;
+	height: 1px;
+	width: 100%;
+	text-align: left;
+}
+
+/* Footer: Pie de pagina
+-----------------------------------------------------------------------------*/
+#piePagina {
+	height: 40px;
+	padding: 5px;
+    color: #FFF;
+    clear: both;
+}
+#piePagina a{
+	color: #FCC931;
+	font-weight:bold;
+}
+
+/* Para las secciones sin barra lateral, como el about y las recomendaciones
+-----------------------------------------------------------------------------*/
+.ancho {
+	width: 600px;
+	padding: 15px;
+	margin:0 auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+	font-family: Verdana, sans-serif;
+	font-size: 14px;
+	text-align:center;
+	color:#FFFFFF;
+	
+	border:none;
+}
+
+.ancho a{
+	color: #FCC931;
+	outline: none;
+	text-decoration: none;
+}
+.ancho a:visited{
+	color: #FCC931;
+}
+
+/* Articulo de recomendacion
+-----------------------------------------------------------------------------*/
+.recomendacion p{
+	text-align: justify;
+	font-family: Verdana, sans-serif;
+	font-size: 13px;
+}
+.recomendacion h2{
+	font-size:25px;
+	text-align:center;
+	font-weight:normal;
+	text-transform: uppercase;
+}
+.recomendacion h3{
+	font-size:20px;
+	font-weight:normal;
+	text-align:center;
+	text-transform: uppercase;
+	margin-top:20px;
+}
+
+/* BOTONES
+-----------------------------------------------------------------------------*/
+/* Botones sociales */
+.social{
+	width: 100%;
+	text-align: center;
+}
+.social img{
+	width: 32px;
+	margin-left:5px;
+	margin-right:5px;
+}
+.social img:active{
+	position: relative;
+	top: 2px;
+	left: 2px;
+}
+
+.boton {
+	background-image: linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -o-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -moz-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -webkit-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -ms-linear-gradient(bottom, rgb(233,141,4) 10%, rgb(233,184,48) 88%);
+	background-image: -webkit-gradient(linear, left bottom,	left top,
+	color-stop(0.1, rgb(233,141,4)), color-stop(0.88, rgb(233,184,48)));
+	background-color:#e9b830;
+	
+	border:1px solid #f09311;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	
+	display:inline-block;
+	color:#1D1D1D;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	
+	/* Sombra */
+	box-shadow: 1px 1px 5px #2D2D2D;
+	-moz-box-shadow: 1px 1px 5px #2D2D2D;
+	-webkit-box-shadow: 1px 10px 5px #2D2D2D;
+	
+}
+.boton:hover {
+	background-image: linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+	background-image: -o-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+	background-image: -moz-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+	background-image: -webkit-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+	background-image: -ms-linear-gradient(bottom, rgb(233,184,48) 10%, rgb(233,141,4) 88%);
+	background-image: -webkit-gradient(linear, left bottom, left top,
+	color-stop(0.1, rgb(233,184,48)),color-stop(0.88, rgb(233,141,4)));
+	background-color:#e98d04;
+}
+.boton:active {
+	outline: none;
+	position:relative;
+	top:1px;
+}
+/* Botones del panel lateral */
+.botonPanel {
+	margin-top: 28px;
+	width: 200px;
+	padding:6px 4px;
+	text-transform: uppercase;
+}
+/* Boton de enviar para el newsletter */
+.botonBuscar {
+	text-transform: uppercase;
+	margin-top:10px;
+	padding:2px 4px;
+}
+/* Boton de subir en articulos */
+.arriba {
+	text-transform: uppercase;
+	float:right;
+	clear:both;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding:4px 4px;
+	
+	/* Quitamos sombra */
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+/* Boton de enviar para el newsletter */
+.botonEnviar {
+	text-transform: uppercase;
+	clear:both;
+	margin-top:10px;
+	padding:2px 4px;
+}
+

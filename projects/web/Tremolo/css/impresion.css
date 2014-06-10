@@ -1,0 +1,47 @@
+/* ******************************************************************** */ 
+/*                      Estilo impresion                                */ 
+/* ******************************************************************** */ 
+
+body {
+	background: #fff;
+	color: #000;
+}
+
+#wrapper
+{
+width:100%;
+}
+
+/* Ocultamos elementos de navegacion o interactivos */ 
+aside, nav, .video, #destacados, #tituloDestacados, .volver, .arriba{
+	display:none;
+}
+ 
+#logo{
+	width:100%;
+	clear:both;
+	text-align:center;
+	margin:0 auto;
+	margin-bottom:15px;
+}
+#logo a, #logo p{ color:#313131; }
+
+.tituloSeccion h1, .tituloSeccion h1 a{
+	font-size: 20px;
+}
+
+#contenidos{
+	width:95%;
+	padding:0px;
+	margin:0 auto;
+	border:none;
+	border:0px;
+	margin-bottom: 50px;
+	background: none;
+	border-radius:0px;
+	box-shadow:none;
+}
+
+#piePagina {
+	color: #000;
+}
