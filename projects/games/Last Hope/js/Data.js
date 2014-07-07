@@ -4,6 +4,9 @@
 /// Constantes y variables globales
 /// </summary>
 
+// turn off 'is not defined' rule
+/*jshint -W117 */
+
 // ASSETS
 var ENEMY_SPR_WHITE = 'assets/graphics/enemy_white.png',
 	ENEMY_SPR_BLACK = 'assets/graphics/enemy_black.png',
@@ -21,19 +24,19 @@ var PLAYER_SPR = new createjs.SpriteSheet({
         regX: 16,
         regY: 16
     },
-    animations:{
+    animations: {
         white: [0, 0],
 		black: [1, 1]
 	}
 });
 
 var manifest = [
-	{id:'stageMusic', src:'assets/sound/GiveUsTime.ogg'},
-	{id:'titleMusic', src:'assets/sound/LastHope.ogg'},
-	{id:'enemyExplosion', src:'assets/sound/enemy_explosion.ogg'},
-	{id:'playerExplosion', src:'assets/sound/player_explosion.ogg'},
-	{id:'shootWhite', src:'assets/sound/shootWhite.ogg'},
-	{id:'shootBlack', src:'assets/sound/shootBlack.ogg'},
+	{id: 'stageMusic', src: 'assets/sound/GiveUsTime.ogg'},
+	{id: 'titleMusic', src: 'assets/sound/LastHope.ogg'},
+	{id: 'enemyExplosion', src: 'assets/sound/enemy_explosion.ogg'},
+	{id: 'playerExplosion', src: 'assets/sound/player_explosion.ogg'},
+	{id: 'shootWhite', src: 'assets/sound/shootWhite.ogg'},
+	{id: 'shootBlack', src: 'assets/sound/shootBlack.ogg'}
 ];
 
 // Constantes
@@ -83,7 +86,7 @@ var	loadingText = null,
 	
 // Arrays
 var numEnemies = 0;
-var bullets = new Array();
+var bullets = [];
 
 // Radios, para las colisiones
 var enemyRadio = 14;

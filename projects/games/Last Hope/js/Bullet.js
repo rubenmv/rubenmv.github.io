@@ -3,15 +3,17 @@
 /* <summary>
  * Balas
  * </summary> */
- 
-(function(window) {
 
+/*jshint -W117 */
+ 
+(function (window) {
+    "use strict";
+        
 	// Variables publicas
 	Bullet.prototype.type = null;
 	Bullet.prototype.color = null;
 
-	function Bullet(c)
-	{
+	function Bullet(c) {
 		this.initialize(c);
 	}
 	Bullet.prototype = new createjs.Bitmap();
@@ -20,12 +22,12 @@
 	Bullet.prototype.Bitmap_initialize = Bullet.prototype.initialize;
 	
 	// Funcion inicializadora
-	Bullet.prototype.initialize = function(c)
-	{
-		if(c == 'white')
+	Bullet.prototype.initialize = function (c) {
+		if (c === 'white') {
 			this.Bitmap_initialize(BULLET_SPR_WHITE);
-		else
+        } else {
 			this.Bitmap_initialize(BULLET_SPR_BLACK);
+        }
 
 		this.type = 'bullet';
 		this.color = c;
@@ -40,26 +42,24 @@
 
 		// Agrego el listener para esta clase
 		createjs.Ticker.addListener(this);
-	}
+	};
 
 	// Funcion del ticker/update: actualiza el stage cada 30 frames
 	// Esta completa el tick del Main que va sobre el root (window)
-	Bullet.prototype.tick = function()
-	{
+	Bullet.prototype.tick = function () {
 		// Cuando sale del todo de la pantalla, se elimina
-		if(this.y < -bulletRadio)
-		{
+		if (this.y < -bulletRadio) {
 			removeInstance(this);
-		}
-		else this.y -= BULLET_SPEED; // Avanza
-	}
+		} else {
+            this.y -= BULLET_SPEED; // Avanza
+        }
+	};
 	
 	// Como es una shape, la width la obtenemos de radio ya definido
-	Bullet.prototype.getWidth = function()
-	{
-		return bulletRadio*2;
-	}
-	
-	window.Bullet = Bullet;
-} (window)); // Esto hace que se ejecute automaticamente y minimiza con window
+	Bullet.prototype.getWidth = function () {
+		return bulletRadio * 2;
+	};
+    
+    window.Bullet = Bullet;
+}(window)); // Esto hace que se ejecute automaticamente y minimiza con window
 
