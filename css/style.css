@@ -204,11 +204,11 @@ body {
 	padding: 3em 0;
 }
 #top div {
-	vertical-align: middle;
+	vertical-align: bottom;
 }
 #top img {
 	margin: 0 auto 0 auto;
-	border-radius: 20%;
+	border-radius: 100%;
 }
 #top h1 {
 	font-size: 1.8em;
