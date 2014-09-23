@@ -7,7 +7,7 @@
 	<meta name="description" content="Ruben Martinez Vilar Portfolio" />
 	<meta name="keywords" content="portfolio, programming, dev, web, games" />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/grid.css" />
 	<link rel="stylesheet" href="css/style.css" />
@@ -17,126 +17,146 @@
 </head>
 
 <body>
-	<!-- Nav -->
-	<nav id="nav">
-		<ul class="container">
-			<li><a href="#top">Inicio</a>
-			</li>
-			<li><a href="#works">Trabajos</a>
-			</li>
-			<li><a href="#blog">Blog</a>
-			</li>
-			<li><a href="#contact">Contacto</a>
-			</li>
-		</ul>
-	</nav>
-	<!-- Home -->
-	<header id="top" class="background">
-		<div class="col-30">
-			<img src="images/me.jpg" alt="avatar" />
-		</div>
-		<div id="presentation" class="col-40">
-			<h1>Hola, soy <strong>Rub&eacute;n Mart&iacute;nez</strong>.</h1>
-			<p>Soy un Ingeniero Multimedia de la galaxia de la V&iacute;a L&aacute;ctea y te doy la bienvenida a mi morada.</p>
-			<a href="#works" class="button button-big">Pasemos directamente a la acción</a>
-		</div>
-	</header>
-	<!-- Portfolio -->
-	<article id="works">
-		<header>
-			<h2>Estos son algunos de mis trabajos.</h2>
-		</header>
-		<article>
-			<div class="works-image">
-				<a href="#">
-					<img src="images/works-bumpy-ride.png" alt="Space Defenders screenshot" />
-				</a>
-			</div>
-			<div class="works-description">
-				<h3><a href="#">Space Defenders</a></h3>
-				<p>Videojuego en red local.
-					<br/>C++, OpenGL, Raknet.
-				</p>
-			</div>
-		</article>
-		<article>
-			<div class="works-image">
-				<a href="#">
-					<img src="images/works-bumpy-ride.png" alt="Space Defenders screenshot" />
-				</a>
-			</div>
-			<div class="works-description">
-				<h3><a href="#">Space Defenders</a></h3>
-				<p>Videojuego en red local.
-					<br/>C++, OpenGL, Raknet.
-				</p>
-			</div>
-		</article>
-		<article>
-			<div class="works-image">
-				<a href="#">
-					<img src="images/works-bumpy-ride.png" alt="Space Defenders screenshot" />
-				</a>
-			</div>
-			<div class="works-description">
-				<h3><a href="#">Space Defenders</a></h3>
-				<p>Videojuego en red local.
-					<br/>C++, OpenGL, Raknet.
-				</p>
-			</div>
-		</article>
-		<footer>
-			<p>&iquest;Te ha interesado lo que has visto?</p>
-			<a href="https://github.com/rubenmv" class="button button-big">Ver m&aacute;s trabajos</a>
-			<a href="#contact" class="button button-big">Ponte en contacto conmigo</a>
-		</footer>
-	</article>
-	<!-- Contact -->
-	<article id="contact" class="background">
-		<header>
-			<h2>Contacto</h2>
-			<span>Env&iacute;ame un correo a <a href="mailto:rub3nmv@gmail.com">rub3nmv@gmail.com</a> o cont&aacute;ctame en las redes sociales</span>
-		</header>
-		<div>
-			<ul class="social">
-				<li class="twitter">
-					<a href="http://twitter.com/rub3nmv" class="fa fa-twitter">
-						<span>Twitter</span>
-					</a>
+	<div id="wrapper-page">
+		<!-- Nav -->
+		<nav id="nav">
+			<ul class="container">
+				<li><a href="#top">Inicio</a>
 				</li>
-				<li class="linkedin">
-					<a href="#" class="fa fa-linkedin">
-						<span>LinkedIn</span>
-					</a>
+				<li><a href="#works">Trabajos</a>
 				</li>
-				<li class="googleplus">
-					<a href="#" class="fa fa-google-plus">
-						<span>Google+</span>
-					</a>
+				<li><a href="#blog">Blog</a>
 				</li>
-				<li class="github">
-					<a href="http://github.com/rubenmv" class="fa fa-github">
-						<span>Github</span>
-					</a>
-				</li>
-				<li class="soundcloud">
-					<a href="https://soundcloud.com/rub3nmv" class="fa fa-soundcloud">
-						<span>Soundcloud</span>
-					</a>
-				</li>
-				<li class="vimeo">
-					<a href="https://vimeo.com/user2070809" class="fa fa-vimeo-square">
-						<span>Vimeo</span>
-					</a>
+				<li><a href="#contact">Contacto</a>
 				</li>
 			</ul>
-		</div>
-	</article>
-	<footer id="legal" class="background">
-		<ul id="copyright">
-			<li>&copy; Rub&eacute;n Mart&iacute;nez Vilar. 2013.</li>
-		</ul>
-	</footer>
+		</nav>
+		<!-- Home -->
+		<header id="top" class="background">
+			<div class="col-30">
+				<img src="images/me.jpg" alt="avatar" class="col-80" />
+			</div>
+			<div id="presentation" class="col-40">
+				<h1>Hola, soy <strong>Rub&eacute;n Mart&iacute;nez</strong>.</h1>
+				<p>Soy un Ingeniero Multimedia de la galaxia de la V&iacute;a L&aacute;ctea y te doy la bienvenida a mi morada.</p>
+				<a href="#works" class="button button-big">Pasemos directamente a la acción</a>
+			</div>
+		</header>
+		<!-- Portfolio -->
+		<article id="works">
+			<header>
+				<h2>Estos son algunos de mis trabajos.</h2>
+			</header>
+			<article class="col-20">
+				<div class="works-image">
+					<a href="#">
+						<img src="images/works-bumpy-ride.png" alt="Space Defenders screenshot" />
+					</a>
+				</div>
+				<div class="works-description">
+					<h3><a href="#">Space Defenders</a></h3>
+					<p>Videojuego en red local.
+						<br/>C++, OpenGL, Raknet.
+					</p>
+				</div>
+			</article>
+			<article class="col-20">
+				<div class="works-image">
+					<a href="#">
+						<img src="images/works-bumpy-ride.png" alt="Space Defenders screenshot" />
+					</a>
+				</div>
+				<div class="works-description">
+					<h3><a href="#">Space Defenders</a></h3>
+					<p>Videojuego en red local.
+						<br/>C++, OpenGL, Raknet.
+					</p>
+				</div>
+			</article>
+			<article class="col-20">
+				<div class="works-image">
+					<a href="#">
+						<img src="images/works-bumpy-ride.png" alt="Space Defenders screenshot" />
+					</a>
+				</div>
+				<div class="works-description">
+					<h3><a href="#">Space Defenders</a></h3>
+					<p>Videojuego en red local.
+						<br/>C++, OpenGL, Raknet.
+					</p>
+				</div>
+			</article>
+			<article class="col-20">
+				<div class="works-image">
+					<a href="#">
+						<img src="images/works-bumpy-ride.png" alt="Space Defenders screenshot" />
+					</a>
+				</div>
+				<div class="works-description">
+					<h3><a href="#">Space Defenders</a></h3>
+					<p>Videojuego en red local.
+						<br/>C++, OpenGL, Raknet.
+					</p>
+				</div>
+			</article>
+			<footer>
+				<p>&iquest;Te ha interesado lo que has visto?</p>
+				<a href="https://github.com/rubenmv" class="button button-big">Ver m&aacute;s trabajos</a>
+				<a href="#contact" class="button button-big">Ponte en contacto conmigo</a>
+			</footer>
+		</article>
+		<!-- Contact -->
+		<article id="contact" class="background">
+			<header>
+				<h2>Contacto</h2>
+				<span>Env&iacute;ame un correo a <a href="mailto:rub3nmv@gmail.com">rub3nmv@gmail.com</a> o cont&aacute;ctame en las redes sociales</span>
+			</header>
+			<div>
+				<ul>
+					<li>
+						<a href="http://twitter.com/rub3nmv" class="fa fa-twitter">
+							<span>Twitter</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="fa fa-linkedin">
+							<span>LinkedIn</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="fa fa-google-plus">
+							<span>Google+</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://github.com/rubenmv" class="fa fa-github">
+							<span>Github</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://vimeo.com/user2070809" class="fa fa-vimeo-square" title="Vimeo">
+							<span>Vimeo</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://soundcloud.com/rub3nmv" class="fa fa-soundcloud">
+							<span>Soundcloud</span>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.last.fm/user/rub3nmv" class="fa fa-lastfm-square">
+							<span>Last.fm</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<footer id="legal" class="background">
+			<ul id="copyright">
+				<li>&copy; Rub&eacute;n Mart&iacute;nez Vilar. 2013.</li>
+			</ul>
+		</footer>
+	</div>
 </body>
 
 </html>
