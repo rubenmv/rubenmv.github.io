@@ -5,8 +5,4 @@
 - En vez de usar menus de navegacion a pelo sin sentido, mejor hacer que las secciones se colapsen y se vean al pulsar el boton correspondiente. Eso o quitar cierto elementos de navegacion que no sirven de mucho.
 - IE9 va como quiere, sera por los scripts desactivados.
 - Proyectos para agregar:
-	- Ramon el ladron
-	- Tremolo
-	- CarGL
-	- Pixar intro
-	- Video final MAC
+	- PhotoSpot
