@@ -196,7 +196,7 @@ p {
 /* Top, presentation *****************************************************   */
 
 body {
-	background: #444349 url('../images/stardust.png') repeat;
+	background: #444349 url('../images/stardust.png') fixed repeat;
 }
 #top {
 	padding: 3em 0;

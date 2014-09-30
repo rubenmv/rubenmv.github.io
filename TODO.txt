@@ -6,3 +6,9 @@
 - IE9 va como quiere, sera por los scripts desactivados.
 - Proyectos para agregar:
 	- PhotoSpot
+
+- Proyectos por arreglar y agregar:
+	- PhotoSpot
+	- Bumpy Ride (no funciona)
+	- El del conejo de SM
+	- Remake del Last Hope
