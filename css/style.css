@@ -160,10 +160,11 @@ p {
 	background-color: #282828;
 	text-align: center;
 	position: fixed;
-	left: 0;
 	top: 0;
-	width: 100%;
+	left: 0;
 	z-index: 10000;
+	width: 100%;
+
 	cursor: default;
 }
 #nav ul {
@@ -194,12 +195,12 @@ p {
 	border-top: solid 0.6em #282828;
 }
 /* Top, presentation *****************************************************   */
-
 body {
 	background: #444349 url('../images/stardust.png') fixed repeat;
 }
 #top {
 	padding: 3em 0;
+	padding-top: 4em;
 }
 #top div {
 	vertical-align: middle;
@@ -302,3 +303,6 @@ body {
 #copyright a:hover {
 	color: #777;
 }
+
+
+/* Debug *****************************************************  */
