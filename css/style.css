@@ -73,6 +73,11 @@ em, i {
 p {
 	margin-bottom: 1em;
 }
+
+#top, #works, #contact {
+	padding-top: 4em !important;
+}
+
 /* Buttons */
 
 .button {
@@ -163,8 +168,9 @@ p {
 	padding: 0.5em 1em;
 	position: relative;
 	display: block;
-	color: #fff;
 	text-decoration: none;
+	font-weight: 700;
+	color: #fff;
 }
 #nav a:hover {
 	color: #fff !important;
@@ -181,10 +187,6 @@ p {
 	border-top: solid 0.6em #282828;
 }
 /* Top, presentation *****************************************************   */
-
-#top, #works, #contact, #legal {
-	padding-top: 4em !important;
-}
 
 body {
 	background: #444349 url('../images/stardust.png') fixed repeat;
