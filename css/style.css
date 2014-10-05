@@ -1,18 +1,13 @@
 @charset'UTF-8';
-
 /* apply a natural box layout model to all elements, but allowing components to change */
 
 html {
 	box-sizing: border-box;
 }
-*,
-*:before,
-*:after {
+*, *:before, *:after {
 	box-sizing: inherit;
 }
-body,
-input,
-textarea {
+body, input, textarea {
 	font-family: 'Open Sans', sans-serif;
 	line-height: 1.8em;
 	color: #888;
@@ -42,21 +37,14 @@ a:hover {
 a img {
 	border: 0;
 }
-strong,
-b {
+strong, b {
 	font-weight: 600;
 	color: #fafafa;
 }
-h1,
-h2 {
+h1, h2 {
 	color: #f5f5f5;
 }
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	text-decoration: none;
 	color: inherit;
 }
@@ -77,8 +65,7 @@ h3 {
 h4 {
 	font-weight: 700;
 }
-em,
-i {
+em, i {
 	font-style: italic;
 }
 /*One line space b/w paragraphs*/
@@ -164,7 +151,6 @@ p {
 	left: 0;
 	z-index: 10000;
 	width: 100%;
-
 	cursor: default;
 }
 #nav ul {
@@ -195,12 +181,16 @@ p {
 	border-top: solid 0.6em #282828;
 }
 /* Top, presentation *****************************************************   */
+
+#top, #works, #contact, #legal {
+	padding-top: 4em !important;
+}
+
 body {
 	background: #444349 url('../images/stardust.png') fixed repeat;
 }
 #top {
 	padding: 3em 0;
-	padding-top: 4em;
 }
 #top div {
 	vertical-align: middle;
@@ -214,7 +204,6 @@ body {
 	width: 100%;
 	max-width: 300px;
 }
-
 #top h1 {
 	font-size: 1.8em;
 	margin-top: 0.35em;
@@ -245,11 +234,10 @@ body {
 	min-width: 150px;
 	padding: 0;
 	margin: 2em 0.2em;
-	background-color:  rgba(11, 11, 11, 0.2);
+	background-color: rgba(11, 11, 11, 0.2);
 }
 #works article:hover {
-	background-color:  rgba(11, 11, 11, 0.6);
-
+	background-color: rgba(11, 11, 11, 0.6);
 	-moz-transition: background-color .3s ease-in-out;
 	-webkit-transition: background-color .3s ease-in-out;
 	-o-transition: background-color .3s ease-in-out;
@@ -303,6 +291,4 @@ body {
 #copyright a:hover {
 	color: #777;
 }
-
-
 /* Debug *****************************************************  */
