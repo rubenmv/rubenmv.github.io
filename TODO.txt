@@ -1,8 +1,3 @@
 - Soporte para noscript.
 - Crear un curriculum en pdf y enlazarlo.
-- IE9 va como quiere, sera por los scripts desactivados.
-
-- Proyectos por arreglar y agregar:
-	- Bumpy Ride (no funciona)
-	- El del conejo de SM
-	- Remake del Last Hope
+- Soporte para IE8.
