@@ -2,3 +2,4 @@
 - Crear un curriculum en pdf y enlazarlo.
 - Soporte para IE8.
 - Reducir tamaño de imagenes y hacerlas todas con las mismas dimensiones
+- Agregar extensiones de chrome al apartado web
