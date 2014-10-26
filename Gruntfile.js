@@ -56,5 +56,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-newer'); // only apply when newer/changed files
-	grunt.registerTask('default', ['cssmin', 'concat', 'uglify', 'imagemin']);
+	grunt.registerTask('default', ['cssmin', 'concat', 'uglify', 'newer:imagemin']);
 };
