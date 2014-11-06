@@ -2,18 +2,26 @@ var mozjpeg = require('imagemin-mozjpeg');
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'), //load configuration
+		// Remove unused CSS
+		uncss: {
+			dist: {
+				files: {
+					'css/style.uncss.css': ['index.html']
+				}
+			}
+		},
 		// CSS concat and minification
 		cssmin: {
 			combine: {
 				files: {
-					'css/style.concat.css': ['css/reset.css', 'css/grid.css', 'css/style.css']
+					'css/style.min.css': ['css/reset.css', 'css/grid.css', 'css/style.css']
 				}
 			},
-			my_target: {
+			minify: {
 				files: [{
 					expand: true,
 					cwd: 'css/',
-					src: ['style.concat.css'],
+					src: ['style.uncss.css'],
 					dest: 'css/',
 					ext: '.min.css'
 				}]
@@ -52,9 +60,10 @@ module.exports = function(grunt) {
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-cssmin'); // which NPM packages to load
+	grunt.loadNpmTasks('grunt-uncss'); // Removes unused css
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-newer'); // only apply when newer/changed files
-	grunt.registerTask('default', ['cssmin', 'concat', 'uglify', 'newer:imagemin']);
+	grunt.registerTask('default', ['cssmin:combine', 'uncss', 'cssmin:minify', 'concat', 'uglify', 'newer:imagemin']);
 };

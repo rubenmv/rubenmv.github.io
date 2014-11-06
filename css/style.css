@@ -1,14 +1,3 @@
-@charset'UTF-8';
-/* apply a natural box layout model to all elements, but allowing components to change */
-
-html {
-	box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-	box-sizing: inherit;
-}
 body,
 input,
 textarea {
@@ -138,26 +127,6 @@ p {
 	box-shadow: inset 0px 0px 0px 1px #135c86, inset 0px -2px 1px 0px rgba(255, 255, 255, 0.75);
 	top: 1px;
 }
-.button-alt {
-	background-color: #393939;
-	background-image: -moz-linear-gradient(top, rgba(50, 50, 50, 0), rgba(45, 45, 45, 1));
-	background-image: -webkit-linear-gradient(top, rgba(50, 50, 50, 0), rgba(45, 45, 45, 1));
-	background-image: -o-linear-gradient(top, rgba(50, 50, 50, 0), rgba(45, 45, 45, 1));
-	background-image: -ms-linear-gradient(top, rgba(50, 50, 50, 0), rgba(45, 45, 45, 1));
-	background-image: linear-gradient(top, rgba(50, 50, 50, 0), rgba(45, 45, 45, 1));
-	box-shadow: inset 0px 0px 0px 1px #242424, inset 0px 2px 1px 0px rgba(255, 255, 255, 0.2);
-}
-.button-alt:hover {
-	background-color: #444;
-}
-.button-alt:active {
-	background-image: -moz-linear-gradient(top, rgba(45, 45, 45, 1), rgba(50, 50, 50, 0));
-	background-image: -webkit-linear-gradient(top, rgba(45, 45, 45, 1), rgba(50, 50, 50, 0));
-	background-image: -o-linear-gradient(top, rgba(45, 45, 45, 1), rgba(50, 50, 50, 0));
-	background-image: -ms-linear-gradient(top, rgba(45, 45, 45, 1), rgba(50, 50, 50, 0));
-	background-image: linear-gradient(top, rgba(45, 45, 45, 1), rgba(50, 50, 50, 0));
-	box-shadow: inset 0px 0px 0px 1px #242424, inset 0px -2px 1px 0px rgba(255, 255, 255, 0.2);
-}
 /* Nav *****************************************************        */
 
 #nav {
@@ -187,17 +156,7 @@ p {
 #nav a:hover {
 	color: #fff !important;
 }
-#nav a.active:before {
-	content: '';
-	display: block;
-	position: absolute;
-	bottom: -0.6em;
-	left: 50%;
-	margin-left: -0.75em;
-	border-left: solid 0.75em transparent;
-	border-right: solid 0.75em transparent;
-	border-top: solid 0.6em #282828;
-}
+
 /* Top, presentation *****************************************************   */
 
 body {
@@ -215,8 +174,8 @@ body {
 #me img {
 	margin: 0 auto 0 auto;
 	border-radius: 100%;
-	width: 100%;
-	max-width: 300px;
+	width: 300px;
+	height: 300px;
 }
 #top h1 {
 	font-size: 1.8em;
@@ -228,14 +187,8 @@ body {
 	font-size: 1.2em;
 	line-height: 1.75em;
 }
-#top p a {
-	color: inherit;
-}
 #presentation {
 	text-align: left;
-}
-#contact {} #contact footer {
-	font-size: 0.9em;
 }
 /* Works *****************************************************  */
 
@@ -259,8 +212,8 @@ body {
 	transition: background-color .3s ease-in-out;
 }
 .works-image img {
-	max-width: 100%;
-	max-height: auto;
+	width: 100%;
+	height: auto;
 }
 .works-description {
 	font-size: 0.8em;
@@ -293,16 +246,5 @@ body {
 #copyright {
 	color: #ccc;
 	font-weight: bold;
-}
-#copyright a {
-	color: inherit;
-	-moz-transition: color .2s ease-in-out;
-	-webkit-transition: color .2s ease-in-out;
-	-o-transition: color .2s ease-in-out;
-	-ms-transition: color .2s ease-in-out;
-	transition: color .2s ease-in-out;
-}
-#copyright a:hover {
-	color: #777;
 }
 /* Debug *****************************************************  */
