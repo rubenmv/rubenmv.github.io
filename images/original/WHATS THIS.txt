@@ -1,2 +1,0 @@
-This directory holds no optimized images.
-Only jpg, png, gif or wathever format that's being optimized with grunt task imagemin.
