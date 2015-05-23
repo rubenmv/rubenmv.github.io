@@ -1,4 +1,3 @@
-- Soporte para noscript.
-- Crear un curriculum en pdf y enlazarlo.
-- Soporte para IE8.
-- Usar uncss para eliminar el css no usado antes de minimizar
+- Agregar Portfolio pdf
+- Iconos redes sociales con font-awesome
+- Pagina error 404

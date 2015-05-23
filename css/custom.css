@@ -1,0 +1,24 @@
+ul {
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.active {
+  font-weight: 700;
+}
+
+/*Font awesome icons*/
+.fa {
+  color: #333;
+  font-size: 4em;
+  margin-right: 0.5em;
+}
+.fa {
+  text-decoration: none;
+}
