@@ -1,3 +1,9 @@
 - Agregar Portfolio pdf
 - Iconos redes sociales con font-awesome
-- Pagina error 404
+- Paginas:
+  - Landing
+  - Error 404
+  - About
+  - Contact
+  - Blog
+- Limpiar librerías y demás cosas que no hagan falta, como jquery?

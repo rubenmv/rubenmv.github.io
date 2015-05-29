@@ -1,13 +1,14 @@
-<header class="site-header">
+<header>
   <div class="wrapper">
-    <h1>THIS IS THE HEADER</h1>
+    <h1>
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    <nav>
+    </h1>
+    <nav class="site-menu">
       <ul>
-        <li><a {% if page.url == '/about/' %}class="active" {% endif %}href="/about/">About</a></li>
-        <li><a {% if page.url == '/projects/' %}class="active" {% endif %}href="/projects/">Projects</a></li>
-        <li><a {% if page.url == '/blog/' %}class="active" {% endif %}href="/blog/">Blog</a></li>
-        <li><a {% if page.url == '/contact/' %}class="active" {% endif %}href="/contact/">Contact</a></li>
+        <li><a {% if page.url == '/about/' %}class="item-active" {% endif %}href="/about/">About</a></li>
+        <li><a {% if page.url == '/projects/' %}class="item-active" {% endif %}href="/projects/">Projects</a></li>
+        <li><a {% if page.url == '/blog/' %}class="item-active" {% endif %}href="/blog/">Blog</a></li>
+        <li><a {% if page.url == '/contact/' %}class="item-active" {% endif %}href="/contact/">Contact</a></li>
       </ul>
     </nav>
   </div>

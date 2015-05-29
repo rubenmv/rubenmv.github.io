@@ -8,6 +8,10 @@ url: "rubenmv.github.io" # the base hostname & protocol for your site
 twitter_username: rub3nvm
 github_username:  rubenmv
 
+# Styles
+sass:
+  style: compressed
+
 # Build settings
 markdown: kramdown
 author:

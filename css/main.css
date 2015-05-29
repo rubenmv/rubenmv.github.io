@@ -1,0 +1,36 @@
+@charset"utf-8";
+.site-wrapper {
+  border: 1px dashed #5A6D73;
+  margin: 1em 1em 0 1em;
+  color: #5A6D73;
+  background-color: #FBF6E0;
+  text-align: center;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-menu.item-active {
+  font-weight: 700;
+}
+
+.post {
+  text-align: left;
+}
+/*Font awesome icons*/
+
+.fa {
+  color: #333;
+  font-size: 4em;
+  margin-right: 0.5em;
+}
+.fa {
+  text-decoration: none;
+}
