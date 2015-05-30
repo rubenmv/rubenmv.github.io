@@ -2,7 +2,7 @@
 title: Rubén Martínez Vilar
 email: rub3nmv@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Rubén Martínez Vilar Portfolio. Multimedia engineer. Software designer and developer. Game Development.
+  Rubén Martínez Vilar Portfolio. Multimedia engineer. Earthling.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "rubenmv.github.io" # the base hostname & protocol for your site
 twitter_username: rub3nvm
@@ -20,6 +20,6 @@ author:
 # Blog
 # Creates the posts into blog folder
 permalink: '/blog/:year/:title/'
-paginate: 5
+paginate: 10
 # This allows to call paginator from subfolder blog/index.html and separates pages in folders
 paginate_path: "/blog/page:num/"

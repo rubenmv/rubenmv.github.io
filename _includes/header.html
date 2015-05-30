@@ -1,15 +1,22 @@
 <header>
-  <div class="wrapper">
-    <h1>
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    </h1>
-    <nav class="site-menu">
-      <ul>
-        <li><a {% if page.url == '/about/' %}class="item-active" {% endif %}href="/about/">About</a></li>
-        <li><a {% if page.url == '/projects/' %}class="item-active" {% endif %}href="/projects/">Projects</a></li>
-        <li><a {% if page.url == '/blog/' %}class="item-active" {% endif %}href="/blog/">Blog</a></li>
-        <li><a {% if page.url == '/contact/' %}class="item-active" {% endif %}href="/contact/">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav class="site-menu pure-menu pure-menu-horizontal">
+    <a href="{{ site.baseurl }}/" class="pure-menu-heading pure-menu-link">{{ site.title }}</a>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a class="pure-menu-link" href="#about">About</a></li>
+      <li class="pure-menu-item"><a class="pure-menu-link" href="#projects">Projects</a></li>
+      <li class="pure-menu-item"><a class="pure-menu-link" href="/blog/">Blog</a></li>
+      <li class="pure-menu-item"><a class="pure-menu-link" href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a {% if page.url == '/about/' %}class="pure-menu-link" {% endif %}href="/about/">About</a></li>
+      <li class="pure-menu-item"><a {% if page.url == '/projects/' %}class="pure-menu-link" {% endif %}href="/projects/">Projects</a></li>
+      <li class="pure-menu-item"><a {% if page.url == '/blog/' %}class="pure-menu-link" {% endif %}href="/blog/">Blog</a></li>
+      <li class="pure-menu-item"><a {% if page.url == '/contact/' %}class="pure-menu-link" {% endif %}href="/contact/">Contact</a></li>
+    </ul> -->
+  </nav>
+  <h1 class="site-title">
+  <a href="{{ site.baseurl }}/">Rubén Martínez Vilar</a>
+  </h1>
+  <img class="me" src="{{ site.baseurl }}/img/me.jpg">
 </header>

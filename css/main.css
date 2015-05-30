@@ -1,28 +1,74 @@
 @charset"utf-8";
-.site-wrapper {
-  border: 1px dashed #5A6D73;
-  margin: 1em 1em 0 1em;
-  color: #5A6D73;
-  background-color: #FBF6E0;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  color: #FBF6E0;
+  background: #5A6D73 url("../img/stardust.png") fixed;
   text-align: center;
 }
 ul {
   padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 ul li {
   display: inline-block;
 }
 a {
-  color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  color: #E9E3CA;
 }
-.site-menu.item-active {
-  font-weight: 700;
+h2, h3 {
+  font-size: 2em;
+  font-weight: 300;
 }
+/*CONTENT WRAPPER*/
+
+.page-content {
+  /*max-width: 1080px;*/
+
+margin: 2em auto;
+  padding: 2em;
+}
+/*HEADER*/
+
+.site-menu a {
+  color: #E9E3CA;
+}
+header {
+  color: #FBF6E0;
+}
+.site-menu {
+  background-color: rgba(58, 57, 62, 0.6);
+}
+.me {
+  max-width: 150px;
+  border-radius: 100%;
+  border: 10px solid #FBF6E0;
+}
+/*CONTENT*/
+
+.page-content {
+  background-color: rgba(58, 57, 62, 0.6);
+}
+/*BLOG*/
 
 .post {
   text-align: left;
+}
+.post-title {
+  margin-bottom: 0.3em;
+}
+/*FOOTER*/
+
+.site-footer {
+  margin-top: 3em;
+  font-size: 0.9em;
+  line-height: 1.5em;
 }
 /*Font awesome icons*/
 
