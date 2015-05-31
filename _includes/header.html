@@ -1,46 +1,43 @@
 <header class="main-header">
+  <!-- MAIN MENU -->
   <nav class="site-menu pure-menu pure-menu-horizontal">
     <a href="{{ site.baseurl }}/" class="pure-menu-heading pure-menu-link">{{ site.title }}</a>
     <ul class="pure-menu-list">
-      <li class="pure-menu-item"><a class="pure-menu-link" href="#about">About</a></li>
-      <li class="pure-menu-item"><a class="pure-menu-link" href="#projects">Projects</a></li>
-      <li class="pure-menu-item"><a class="pure-menu-link" href="/blog/">Blog</a></li>
-      <li class="pure-menu-item"><a class="pure-menu-link" href="#contact">Contact</a></li>
+      <li class="pure-menu-item"><a class="pure-menu-link" href="/#about">About</a></li>
+      <li class="pure-menu-item"><a class="pure-menu-link" href="/#projects">Projects</a></li>
+      <li class="pure-menu-item"><a class="pure-menu-link" href="/blog/#posts">Blog</a></li>
+      <li class="pure-menu-item"><a class="pure-menu-link" href="/#contact">Contact</a></li>
     </ul>
-    <!-- <ul class="pure-menu-list">
-      <li class="pure-menu-item"><a {% if page.url == '/about/' %}class="pure-menu-link" {% endif %}href="/about/">About</a></li>
-      <li class="pure-menu-item"><a {% if page.url == '/projects/' %}class="pure-menu-link" {% endif %}href="/projects/">Projects</a></li>
-      <li class="pure-menu-item"><a {% if page.url == '/blog/' %}class="pure-menu-link" {% endif %}href="/blog/">Blog</a></li>
-      <li class="pure-menu-item"><a {% if page.url == '/contact/' %}class="pure-menu-link" {% endif %}href="/contact/">Contact</a></li>
-    </ul> -->
   </nav>
-  <article class="main-header-article">
+  <!-- PRESENTATION -->
+  <article class="presentation">
   <h1 class="site-title">
   <a href="{{ site.baseurl }}/">Rubén Martínez Vilar</a>
   </h1>
   <img class="me" src="{{ site.baseurl }}/img/me.jpg">
-  <section id="presentation">
-    <h2 class="title">I'm a human from the Milky Way Galaxy and I spend my days on planet Earth creating multimedia stuff. Check it out!</h2>
+  <!-- SECTIONS -->
+  <section>
+    <p class="presentation-text">I'm a human from the Milky Way Galaxy and I spend my days on planet Earth creating multimedia stuff. Check it out!</p>
     <nav>
       <ul class="pure-g">
-      <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
+        <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
           <div class="presentation-box">
-            <a href="#about">About me</a>
+            <a href="/#about">About me</a>
           </div>
         </li>
         <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
           <div class="presentation-box">
-            <a href="#projects">Projects</a>
+            <a href="/#projects">Projects</a>
           </div>
         </li>
         <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
           <div class="presentation-box">
-            <a href="/blog/">Blog</a>
+            <a href="/blog/#posts">Blog</a>
           </div>
         </li>
         <li class="pure-u-1 pure-u-sm-1-2 pure-u-md-1-4">
           <div class="presentation-box">
-            <a href="#contact">Contact me</a>
+            <a href="/#contact">Contact me</a>
           </div>
         </li>
       </ul>

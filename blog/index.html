@@ -3,10 +3,10 @@ layout: default
 title: Blog
 class: blog
 ---
-<div class="posts">
+<article id="posts" class="posts">
   <h2>Here is where I write about stuff</h2>
   {% for post in paginator.posts %}
-  <div class="post">
+  <div>
     <h3 class="post-title">
     <a href="{{ site.baseurl }}{{ post.url }}">
     {{ post.title }}
@@ -28,4 +28,4 @@ class: blog
   {% else %}
   <span class="pure-button pure-button-disabled">Older</span>
   {% endif %}
-</div>
+</article>

@@ -4,26 +4,63 @@ title: Welcome
 header: Hey! I'm <strong>Rubén Martínez</strong>
 class: home
 ---
-<section id="about">
-  <h2>So what about me?</h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-  </p>
-  <p>
-  It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  </p>
-</section>
-<section id="contact">
-  <h2 class="content-head is-center">Contact me on social networks.</h2>
-  <h2 class="content-head is-center">Or just send me an email.</h2>
-  <form class="pure-form pure-form-stacked" action="MAILTO:rub3nmv@gmail.com" method="post" enctype="text/plain">
-    <fieldset>
-      <label for="name">Your Name</label>
-      <input id="name" type="text" placeholder="Your Name">
-      <label for="email">Your Email</label>
-      <input id="email" type="email" placeholder="Your Email">
-      <label for="password">Tell me something</label>
-      <input type="text" name="comment" value="Your comment" size="50"><br><br>
-      <button type="submit" class="pure-button">Send email</button>
-    </fieldset>
-  </form>
-</section>
+<article id="about">
+<h2>So what about me?</h2>
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+</p>
+<p>
+It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+</article>
+<article id="contact">
+<h2>Contact me.</h2>
+<div class="social-icons">
+  <ul>
+    <li>
+      <a href="http://twitter.com/rub3nmv" class="fa fa-twitter" title="Twitter">
+      <span>Twitter</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="fa fa-linkedin" title="LinledIn">
+      <span>LinkedIn</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://github.com/rubenmv" class="fa fa-github" title="GitHub">
+      <span>Github</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="fa fa-google-plus" title="Google Plus">
+      <span>Google+</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://vimeo.com/user2070809" class="fa fa-vimeo-square" title="Vimeo">
+      <span>Vimeo</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://soundcloud.com/rub3nmv" class="fa fa-soundcloud" title="Soundcloud">
+      <span>Soundcloud</span>
+      </a>
+    </li>
+    <li>
+      <a href="http://www.last.fm/user/rub3nmv" class="fa fa-lastfm-square" title="Last.fm">
+      <span>Last.fm</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<form class="form-email pure-form pure-form-stacked" onsubmit="return false;" enctype="text/plain">
+  <fieldset>
+    <label for="email">Your Email</label>
+    <input id="email" type="email" placeholder="Your Email">
+    <label for="comment">Tell me something</label>
+    <textarea id="comment" placeholder="Write your comment here"></textarea>
+    <button type="submit" class="pure-button" onclick="location.href=&quot;mailto:rub3nmv@gmail.com?subject=Portfolio&nbsp;message&amp;body=&quot;+encodeURI(document.getElementById(&quot;comment&quot;).value);">Send email</button>
+  </fieldset>
+</form>
+</article>

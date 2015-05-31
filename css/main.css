@@ -22,18 +22,25 @@ a {
   text-decoration: none;
   color: #E9E3CA;
 }
-h2, h3 {
-  font-size: 2em;
+h1, h2, h3 {
   font-weight: 300;
 }
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 1.5em;
+}
 /*HEADER*/
+
 .main-header {
   margin-top: 4em;
   color: #FBF6E0;
-  min-height: 100vh; /*Fills viewport height*/
-}
-.main-header-article {
-  padding: 0 2em;
+  min-height: 100vh;
+  /*Fills viewport height*/
 }
 .site-menu {
   position: fixed;
@@ -43,12 +50,23 @@ h2, h3 {
 .site-menu a {
   color: #E9E3CA;
 }
+.pure-menu-link:hover {
+  background-color: #333 !important;
+}
 .me {
   max-width: 150px;
   border: 5px solid #FBF6E0;
   border-radius: 100%;
 }
-#presentation li {
+.presentation {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+.presentation-text {
+  font-size: 2em;
+}
+.presentation li {
   padding: 1em;
   text-align: center;
   min-width: 150px;
@@ -57,41 +75,69 @@ h2, h3 {
 .presentation-box {
   margin: 0 auto; /*Centers box inside li*/
   width: 150px;
-  height: 150px;
-  background: #FBF6E0 url("../img/me.jpg") no-repeat;
+  height: 150px; /*background: #FBF6E0 url("../img/me.jpg") no-repeat;*/
   border: 5px solid #FBF6E0;
   border-radius: 100%;
 }
 .presentation-box a {
   font-size: 1.5em;
   display: block;
-  height:100%;
+  height: 100%;
   margin: 0;
-  line-height: 140px; /*Container height - border*/
-}
-/*ABOUT SECTION*/
-#about {
-  font-size: 2em;
-  padding: 1em 4em;
+  line-height: 140px;
+  /*Container height - border*/
 }
 /*CONTENT*/
 .page-content {
-  padding: 2em;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+/*ABOUT SECTION*/
+#about {
+  padding: 0.1em 4em;
   background-color: rgba(58, 57, 62, 0.6);
 }
-.page-content-wrapper {
-  margin: 0 auto;
-  max-width: 1080px;
+#about p {
+  font-size: 1.8em;
+}
+/*CONTACT*/
+.form-email input[type=text],
+.form-email input[type=email],
+.form-email textarea {
+  margin: auto;
+  margin-bottom: 1em;
+  color: #333;
+}
+.form-email textarea {
+  width: 300px;
+  height: 100px;
 }
 /*BLOG*/
-
+.posts {
+  padding: 0.1em 4em;
+  text-align: center;
+}
 .post {
-  text-align: left;
+  padding: 0.1em 4em;
+  text-align: justify;
 }
 .post-title {
   text-decoration: underline;
   margin-bottom: 0.3em;
 }
+.pagination {
+  margin: 3em 0;
+}
+/*General look for buttons*/
+.pure-button {
+  color: #FBF6E0;
+  background-color: rgba(48, 47, 52, 0.8);
+}
+.pure-button:hover {
+  text-decoration: underline;
+  background-color: rgba(69, 69, 77, 0.8);
+}
+
 /*FOOTER*/
 
 .site-footer {
@@ -103,12 +149,18 @@ h2, h3 {
   text-decoration: underline;
 }
 /*Font awesome icons*/
+.social-icons {
 
-.fa {
-  color: #333;
-  font-size: 4em;
-  margin-right: 0.5em;
 }
 .fa {
-  text-decoration: none;
+  padding: 0.2em;
+  color: #FBF6E0;
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+.fa:hover {
+  outline: 1px solid #FBF6E0;
+}
+.fa span {
+  display: none;
 }

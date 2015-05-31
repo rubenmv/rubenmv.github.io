@@ -1,9 +1,7 @@
 - Agregar Portfolio pdf
-- Iconos redes sociales con font-awesome
+- Menu responsive
 - Paginas:
   - Landing
-  - Error 404
   - About
-  - Contact
   - Blog
 - Limpiar librerías y demás cosas que no hagan falta, como jquery?
