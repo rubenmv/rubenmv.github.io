@@ -13,7 +13,7 @@ sass:
   style: compressed
 
 # Build settings
-highlighter: rouge
+highlighter: pygments
 markdown: kramdown
 author:
   name: 'Rub&eacute;n Mart&iacute;nez Vilar'
