@@ -29,7 +29,7 @@ a {
 a:hover {
   color: #B1D3A0;
 }
-a:visited {
+.post-title a:visited {
   color: #BFB58D;
 }
 h1, h2, h3 {
