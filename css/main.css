@@ -1,4 +1,5 @@
 @charset"utf-8";
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9,6 +10,7 @@ body {
   color: #FBF6E0;
   background: #5A6D73 url("../img/stardust.png") fixed;
   text-align: center;
+  font-family: 'Roboto Slab', Georgia, serif;
 }
 ul {
   padding: 0;
@@ -21,6 +23,14 @@ ul li {
 a {
   text-decoration: none;
   color: #E9E3CA;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+a:hover {
+  color: #B1D3A0;
+}
+a:visited {
+  color: #BFB58D;
 }
 h1, h2, h3 {
   font-weight: 300;
@@ -34,6 +44,7 @@ h2 {
 h3 {
   font-size: 1.5em;
 }
+
 /*General look for buttons*/
 .pure-button {
   color: #FBF6E0;
@@ -43,8 +54,10 @@ h3 {
   text-decoration: underline;
   background-color: rgba(69, 69, 77, 0.8);
 }
+
 /*HEADER*/
 .main-header {
+
   /*Top margin to fit the main menu*/
   margin-top: 3em;
 }
@@ -69,8 +82,7 @@ h3 {
   margin: 0 auto;
   margin-top: 4em;
   padding: 0 2em;
-  min-height: 100vh;
-  /*Fills viewport height*/
+  min-height: 100vh;  /*Fills viewport height*/
 }
 .presentation-text {
   font-size: 2em;
@@ -87,20 +99,26 @@ h3 {
   height: 150px; /*background: #FBF6E0 url("../img/me.jpg") no-repeat;*/
   border: 5px solid #FBF6E0;
   border-radius: 100%;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+.presentation-box:hover {
+  background-color: #333;
 }
 .presentation-box a {
   font-size: 1.5em;
   display: block;
   height: 100%;
   margin: 0;
-  line-height: 140px;
-  /*Container height - border*/
+  line-height: 140px;  /*Container height - border*/
 }
+
 /*CONTENT*/
 .page-content {
   max-width: 1080px;
   margin: 0 auto;
 }
+
 /*ABOUT SECTION*/
 #about {
   padding: 0.1em 4em;
@@ -109,10 +127,9 @@ h3 {
 #about p {
   font-size: 1.8em;
 }
+
 /*CONTACT*/
-.form-email input[type=text],
-.form-email input[type=email],
-.form-email textarea {
+.form-email input[type=text], .form-email input[type=email], .form-email textarea {
   margin: auto;
   margin-bottom: 1em;
   color: #333;
@@ -121,6 +138,7 @@ h3 {
   width: 300px;
   height: 100px;
 }
+
 /*BLOG*/
 .posts {
   padding: 0.1em 4em;
@@ -139,7 +157,6 @@ h3 {
 }
 
 /*FOOTER*/
-
 .site-footer {
   margin-top: 3em;
   font-size: 0.9em;
@@ -148,6 +165,7 @@ h3 {
 .site-footer a {
   text-decoration: underline;
 }
+
 /*Font awesome icons*/
 .fa {
   padding: 0.2em;
