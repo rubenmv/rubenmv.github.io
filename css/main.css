@@ -26,7 +26,7 @@ a {
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
-a:hover {
+.post-title a:hover {
   color: #B1D3A0;
 }
 .post-title a:visited {
@@ -125,7 +125,7 @@ h3 {
   background-color: rgba(58, 57, 62, 0.6);
 }
 #about p {
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
 
 /*CONTACT*/
