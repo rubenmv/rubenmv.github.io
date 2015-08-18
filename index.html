@@ -1,61 +1,58 @@
----
-layout: default
-title: Welcome
-header: Hey! I'm <strong>Rubén Martínez</strong>
-class: home
----
+--- layout: default title: Welcome header: Hey! I'm <strong>Rubén Martínez</strong> class: home ---
 <article id="about">
-<h2>So what about me?</h2>
-<p>Hi! I'm Rubén Martínez Vilar from planet Earth, in the Milky Way galaxy. I am graduated in Multimedia Engineering at University of Alicante, Spain. That enabled me to do many things, like web related stuff, games, 3D modeling and animation, and even post-production for TV and movies. Check out my complete list of habilities and the projects I've worked on.</p><p>I'm also one of the 10% privileged of the world population with the Hyperopian hability of making near things look blurred. That's why I need to wear special glasses (just like Cyclops from the X-Men) to contain my powers.</p>
+  <h2>So what about me?</h2>
+  <p>Hi! I'm Rubén Martínez Vilar from planet Earth, in the Milky Way galaxy. I am graduated in Multimedia Engineering at University of Alicante, Spain. That enabled me to do many things, like web related stuff, games, 3D modeling and animation, and even post-production for TV and movies. Check out my complete list of habilities and the projects I've worked on.</p>
+  <p>I'm also one of the 10% privileged of the world population with the Hyperopian hability of making near things look blurred. That's why I need to wear special glasses (just like Cyclops from the X-Men) to contain my powers.</p>
 </article>
 <article id="contact">
-<h2>Contact me.</h2>
-<div class="social-icons">
-  <ul>
-    <li>
-      <a href="http://twitter.com/rub3nmv" class="fa fa-twitter" title="Twitter">
-      <span>Twitter</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="fa fa-linkedin" title="LinkedIn">
-      <span>LinkedIn</span>
-      </a>
-    </li>
-    <li>
-      <a href="http://github.com/rubenmv" class="fa fa-github" title="GitHub">
-      <span>Github</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="fa fa-google-plus" title="Google Plus">
-      <span>Google+</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://vimeo.com/user2070809" class="fa fa-vimeo-square" title="Vimeo">
-      <span>Vimeo</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://soundcloud.com/rub3nmv" class="fa fa-soundcloud" title="Soundcloud">
-      <span>Soundcloud</span>
-      </a>
-    </li>
-    <li>
-      <a href="http://www.last.fm/user/rub3nmv" class="fa fa-lastfm-square" title="Last.fm">
-      <span>Last.fm</span>
-      </a>
-    </li>
-  </ul>
-</div>
-<form class="form-email pure-form pure-form-stacked" onsubmit="return false;" enctype="text/plain">
-  <fieldset>
-    <label for="email">Your Email</label>
-    <input id="email" type="email" placeholder="Your Email">
-    <label for="comment">Tell me something</label>
-    <textarea id="comment" placeholder="Write your comment here"></textarea>
-    <button type="submit" class="pure-button" onclick="location.href=&quot;mailto:rub3nmv@gmail.com?subject=Portfolio&nbsp;message&amp;body=&quot;+encodeURI(document.getElementById(&quot;comment&quot;).value);">Send email</button>
-  </fieldset>
-</form>
+  <h2>Contact me.</h2>
+  <div class="social-icons">
+    <ul>
+      <li>
+        <a href="http://twitter.com/rub3nmv" class="fa fa-twitter" title="Twitter">
+          <span>Twitter</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://es.linkedin.com/pub/ruben-martinez-vilar/60/297/969" class="fa fa-linkedin" title="LinkedIn">
+          <span>LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://github.com/rubenmv" class="fa fa-github" title="GitHub">
+          <span>Github</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://plus.google.com/u/0/+RubenMVilar/about" class="fa fa-google-plus" title="Google Plus">
+          <span>Google+</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://vimeo.com/user2070809" class="fa fa-vimeo-square" title="Vimeo">
+          <span>Vimeo</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://soundcloud.com/rub3nmv" class="fa fa-soundcloud" title="Soundcloud">
+          <span>Soundcloud</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.last.fm/user/rub3nmv" class="fa fa-lastfm-square" title="Last.fm">
+          <span>Last.fm</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <form class="form-email pure-form pure-form-stacked" onsubmit="return false;" enctype="text/plain">
+    <fieldset>
+      <label for="email">Your Email</label>
+      <input id="email" type="email" placeholder="Your Email">
+      <label for="message">Tell me something</label>
+      <textarea id="message" placeholder="Write your message here"></textarea>
+      <!-- <button type="submit" class="pure-button" onclick="location.href=&quot;mailto:rub3nmv@gmail.com?subject=Portfolio&nbsp;message&amp;body=&quot;+encodeURI(document.getElementById(&quot;comment&quot;).value);">Send email</button> -->
+      <button id="btn-send-email" class="pure-button">Send email</button>
+    </fieldset>
+  </form>
 </article>
