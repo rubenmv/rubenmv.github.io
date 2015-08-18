@@ -1,3 +1,4 @@
+
 function sendMail(sender, message) {
   $.ajax({
     type: "POST",
@@ -12,15 +13,18 @@ function sendMail(sender, message) {
           'type': 'to'
         }],
         'subject': 'Portfolio message by ' + sender,
-        'html': 'html can be used'
+        'html': message
       }
     }
   });
 }
 
-document.getElementById("btn-send-mail").addEventListener("click", function() {
-  console.log("Sending email!");
-  var sender = document.getElementById("email").value;
-  var message = document.getElementById("message").value;
-  sendMail(sender, message);
+$(document).ready(function () {
+  document.getElementById("btn-send-mail").addEventListener("click", function () {
+    var sender = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    sendMail(sender, message);
+  });
 });
+
+
