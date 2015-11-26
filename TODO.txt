@@ -1,2 +1,9 @@
-- Soporte para noscript.
-- Soporte para IE8.
+- Menu responsive
+- Paginas:
+  - Landing
+  - About
+  - Blog
+- Blog:
+  - Related posts.
+  - Comments
+- Limpiar librerías y demás cosas que no hagan falta, como jquery?

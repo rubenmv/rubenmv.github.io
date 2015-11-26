@@ -2,4 +2,6 @@ rubenmv.github.io
 -----------------
 
 Hi! I'm Ruben Martinez and this the source code to my portfolio site.<br>
-It's just a simple portfolio, so there's no much to it, but check it out if you want!
+Feel free to check the code, the site is made with:
+  - Jekyll, a static page generator that works with Github.
+  - PureCSS, a set of simple CSS modules for grid, forms, buttons, etc.
