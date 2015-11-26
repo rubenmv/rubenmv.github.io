@@ -1,0 +1,450 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v10/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://fonts.gstatic.com/s/opensans/v10/MTP_ySUJH_bn48VBG8sNSonF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzInF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');
+}
+
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.fa-twitter:before {
+  content: "\f099";
+}
+
+.fa-github:before {
+  content: "\f09b";
+}
+
+.fa-google-plus:before {
+  content: "\f0d5";
+}
+
+.fa-linkedin:before {
+  content: "\f0e1";
+}
+
+.fa-vimeo-square:before {
+  content: "\f194";
+}
+
+.fa-soundcloud:before {
+  content: "\f1be";
+}
+
+.fa-lastfm-square:before {
+  content: "\f203";
+}
+
+a,
+article,
+body,
+div,
+footer,
+h1,
+h2,
+h3,
+h4,
+header,
+html,
+img,
+li,
+nav,
+p,
+section,
+span,
+strong,
+ul {
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+@media (min-width:40em) {
+  [class*=col__] {
+    display: inline-block;
+    padding: 0 .75em;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .col__20 {
+    width: 20%;
+  }
+
+  .col__30 {
+    width: 30%;
+  }
+
+  .col__50 {
+    width: 50%;
+  }
+
+  .col__80 {
+    width: 80%;
+  }
+}
+
+body {
+  font-family: 'Open Sans',sans-serif;
+  line-height: 1.8em;
+  color: #888;
+  font-weight: 300;
+}
+
+body {
+  color: #fff;
+  text-align: center;
+}
+
+#wrapper-page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+a {
+  color: #b7e5ff;
+  text-decoration: underline;
+  -moz-transition: color .2s ease-in-out;
+  -webkit-transition: color .2s ease-in-out;
+  -o-transition: color .2s ease-in-out;
+  -ms-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+a:hover {
+  color: #1B75A6!important;
+}
+
+a img {
+  border: 0;
+}
+
+strong {
+  font-weight: 600;
+  color: #fafafa;
+}
+
+h1,
+h2 {
+  color: #f5f5f5;
+}
+
+h4 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+h1 strong {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: #ccc;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+#contact,
+#top,
+#works {
+  padding-top: 4em!important;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  padding: .5em .8em;
+  text-shadow: -1px -1px .5px rgba(0,0,0,.5);
+  overflow: hidden;
+  background: #61b8db;
+  background-image: -moz-linear-gradient(top,rgba(97,184,219,0),rgba(48,141,196,1));
+  background-image: -webkit-linear-gradient(top,rgba(97,184,219,0),rgba(48,141,196,1));
+  background-image: -o-linear-gradient(top,rgba(97,184,219,0),rgba(48,141,196,1));
+  background-image: -ms-linear-gradient(top,rgba(97,184,219,0),rgba(48,141,196,1));
+  background-image: linear-gradient(top,rgba(97,184,219,0),rgba(48,141,196,1));
+  box-shadow: inset 0 0 0 1px #135c86,inset 0 2px 1px 0 rgba(255,255,255,.75);
+  -moz-transition: background-color .2s ease-in-out;
+  -webkit-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  -ms-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+
+.button:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button:hover {
+  background-color: #76cdf0;
+  color: #fff!important;
+}
+
+.button:active {
+  background-image: -moz-linear-gradient(top,rgba(48,141,196,1),rgba(77,164,199,0));
+  background-image: -webkit-linear-gradient(top,rgba(48,141,196,1),rgba(77,164,199,0));
+  background-image: -o-linear-gradient(top,rgba(48,141,196,1),rgba(77,164,199,0));
+  background-image: -ms-linear-gradient(top,rgba(48,141,196,1),rgba(77,164,199,0));
+  background-image: linear-gradient(top,rgba(48,141,196,1),rgba(77,164,199,0));
+  box-shadow: inset 0 0 0 1px #135c86,inset 0 -2px 1px 0 rgba(255,255,255,.75);
+  top: 1px;
+}
+
+#nav {
+  background-color: #282828;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  cursor: default;
+}
+
+#nav ul {
+  margin-bottom: 0;
+}
+
+#nav li {
+  display: inline-block;
+}
+
+#nav a {
+  padding: .5em 1em;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+}
+
+#nav a:hover {
+  color: #fff!important;
+}
+
+body {
+  background: url(../images/stardust.png) fixed #444349;
+}
+
+#top {
+  padding: 3em 0;
+}
+
+#top div {
+  vertical-align: middle;
+}
+
+#me {
+  text-align: right;
+}
+
+#me img {
+  margin: 0 auto;
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+}
+
+#top h1 {
+  font-size: 1.8em;
+  margin-top: .35em;
+  margin-bottom: 1em;
+}
+
+#top p {
+  color: inherit;
+  font-size: 1.2em;
+  line-height: 1.75em;
+}
+
+#presentation {
+  text-align: left;
+}
+
+#works {
+  padding: 2em 0;
+  border-top: 1px dashed rgba(255,255,255,.3);
+}
+
+#works article {
+  display: inline-block;
+  min-width: 150px;
+  padding: 0;
+  margin: 2em .2em;
+  background-color: rgba(11,11,11,.2);
+}
+
+#works article:hover {
+  background-color: rgba(11,11,11,.6);
+  -moz-transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.works-image img {
+  width: 100%;
+  height: auto;
+}
+
+.works-description {
+  font-size: .8em;
+  line-height: 1.5em;
+}
+
+#contact {
+  border-top: 1px dashed rgba(255,255,255,.3);
+  padding: 2em 0;
+}
+
+#contact li {
+  display: inline-block;
+}
+
+#contact li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 3em;
+  padding: .2em;
+}
+
+#contact li span {
+  display: none;
+}
+
+#legal {
+  padding: 1em 0;
+  border-top: 1px dashed rgba(255,255,255,.3);
+}
+
+#copyright {
+  color: #ccc;
+  font-weight: 700;
+}
+
+@media screen and (max-width:480px) {
+  #top {
+    border: 2px solid pink;
+    padding: 10px;
+  }
+
+  #me,
+  #presentation {
+    text-align: center;
+  }
+}
