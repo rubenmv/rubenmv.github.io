@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+  
+  Procedimental &middot; Rubén Martínez Vilar
+  
+  </title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <!-- RSS -->
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml"> -->
+</head>
+
+<body>
+  <header class="main-header">
+    <!-- MAIN MENU -->
+<nav class="site-menu pure-menu pure-menu-horizontal">
+  <a href="/" class="pure-menu-heading pure-menu-link">Rubén Martínez Vilar</a>
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#about">About</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#projects">Projects</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/blog/#posts">Blog</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#contact">Contact</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="https://dl.dropboxusercontent.com/u/15074300/RubenMartinezVilar-CV.pdf">CV</a></li>
+  </ul>
+</nav>
+
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+  
+  </header>
+  <div class="page-content">
+    <div class="post">
+
+  <header class="post-header">
+    <h3 class="post-title">Procedimental</h3>
+    <p class="post-meta">Jan 6, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>Hablando en términos generales, la <strong>generación procedimental</strong>, o
+<strong>generación por procedimientos</strong>, es eso mismo, generar <strong>contenido</strong>
+por medio <strong>algoritmos</strong> en vez de manera manual. Suele estar
+relacionado con aplicación de computación gráfica y diseño de niveles en
+videojuegos.</p>
+
+<p>Pero vamos a usar una definición más precisa para este proyecto y
+describir la generación procedimental de contenido como <strong>la creación de
+contenido para videojuegos mediante algoritmos y con una limitada e
+indirecta intervención del usuario</strong>.</p>
+
+<h3 id="procedimental-o-procedural">¿Procedimental o procedural?</h3>
+
+<p>La razón por la que planteo esta pregunta es porque si buscamos en la
+Real Academia Española (RAE) la palabra <strong>procedimental</strong> obtenemos la
+siguiente definición:</p>
+
+<blockquote>
+  <p><em>“adj. Perteneciente o relativo al procedimiento (método de ejecutar
+algunas cosas).”</em></p>
+</blockquote>
+
+<p>Pero si buscamos <strong>procedural</strong> no encontramos nada, y es que esta
+palabra es constantemente utilizada incorrectamente como anglicismo de
+la palabra, probablemente porque podría pasar por una palabra española y
+porque es más rápida y sencillo de pronunciar. En entornos no académicos
+este anglicismo es la palabra más utilizada por encima de la que
+encontramos en la RAE.</p>
+
+<p>En cualquier caso no quiero ser demasiado meticuloso con el uso de estas
+palabras y quiero dejar claro que en este documento voy a intentar
+utilizar la versión correcta “<strong>procedimental</strong>”, pero que tanto
+procedimental como procedural son dos palabras que se refieren a lo
+mismo y que ambas son utilizadas con la misma frecuencia al hablar de
+este tema.</p>
+
+<h3 id="y-a-qu-nos-referimos-con-contenido">¿Y a qué nos referimos con contenido?</h3>
+
+<p>Pues prácticamente a casi todo lo que podemos encontrar en el juego,
+desde <strong>objetos</strong> físicos a las mismas <strong>estadísticas</strong> o
+<strong>propiedades</strong> de estos, así como la <strong>música</strong>, <strong>historia</strong> y
+<strong>misiones</strong> e incluso las propias <strong>reglas</strong> del juego. Aspectos que
+quedarían fuera de esta definición serían básicamente el mismo motor del
+juego o la inteligencia artificial, aunque para esta última existen
+muchos estudios y métodos de aprendizaje automático que en cierta manera
+se asemejan a la definición de generación procedimental de contenido,
+pero realmente no generan nuevo contenido en sí.</p>
+
+<p>Otro aspecto del <strong>contenido</strong> que se genere es que debe hacer el juego
+“<strong>jugable</strong>”. Se debe poder terminar un nivel generado o utilizar un
+objeto generado con estas técnicas, que tenga una <strong>utilidad</strong> dentro
+del tipo de asset al que pertenece. Si es un arma, deberíamos poder
+usarla para luchar contra enemigos, si es una decoración de escenario,
+debería estar en el contexto adecuado, situada por el nivel o habitación
+en una posición razonable.</p>
+
+<h3 id="videojuegos">Videojuegos</h3>
+
+<p>Este es un término mucho más difícil de definir, ya que existen muchos
+géneros que podrían decirse que están al borde de lo que es un
+videojuego o cualquier otro tipo de obra audiovisual interactiva.</p>
+
+<p>Una de las definiciones más clásicas detalla un videojuego como</p>
+
+<blockquote>
+  <p><em>“Dispositivo electrónico que permite, mediante mandos apropiados,
+simular juegos en las pantallas de un televisor o de un ordenador.”</em></p>
+</blockquote>
+
+<p>De la RAE:
+<a href="http://buscon.rae.es/drae/srv/search?val=videojuego"><em>http://buscon.rae.es/drae/srv/search?val=videojuego</em></a></p>
+
+<p>En la Wikipedia tenemos una definición más preciso</p>
+
+<blockquote>
+  <p><em>“Un videojuego o juego de video es un juego electrónico en el que una o
+más personas interactúan, por medio de un controlador, con un
+dispositivo dotado de imágenes de vídeo. Este dispositivo electrónico,
+conocido genéricamente como «plataforma», puede ser una computadora, una
+máquina arcade, una videoconsola o un dispositivo portátil (un teléfono
+móvil, por ejemplo). Los videojuegos son, hoy por hoy, una de las
+principales industrias del arte y el entretenimiento.”</em></p>
+</blockquote>
+
+<p>Pero tampoco es el objetivo de este documento indagar más en la
+definición de videojuego, pero si en el papel de la generación
+procedimental de contenido para estos y como afecta los distintos
+aspectos de jugabilidad y diversión.</p>
+
+<p>Por lo tanto la generación procedimental implica el uso de
+procedimientos o algoritmos computacionales para crear algo en un
+videojuego. Más concretamente algunos ejemplos de esto puede ser:</p>
+
+<ul>
+  <li>
+    <p>Una herramiento que crear mazmorras para un juego de aventuras como <strong><em>The Legend of Zelda</em></strong> sin la intervención de la entrada de parámetros por parte del usuario.</p>
+  </li>
+  <li>
+    <p>Un sistema que genera un tablero de juego con cierta combinación de reglas y parámetros. El algoritmo escoge sobre una reglas y parámetros base para crear nuevo contenido usando la combinación de estos.</p>
+  </li>
+  <li>
+    <p>Un motor que funciona como middleware con otro motor de juego para poblar de vegetación un mundo virtual, independientemente de cómo haya sido creado este mundo.</p>
+  </li>
+</ul>
+
+<h3 id="y-por-qu-generar-contenido-de-manera-procedimental">¿Y por qué generar contenido de manera procedimental?</h3>
+
+<p>Ahora que sabemos los conceptos básicos de lo que significa la
+generación procedimental de contenido, tenemos que preguntarnos por qué
+y para qué queremos usar técnicas de este tipo cuando podríamos
+simplemente diseñar el contenido.</p>
+
+<p>Una de las razones más obvias surge de esto mismo, generar contenido
+<strong>manualmente</strong> conlleva, normalmente, tener a un <strong>diseñador</strong> o
+<strong>artista</strong> para hacer esto, con el consiguiente <strong>coste</strong> de
+mantenimiento de esa persona en cuanto a sueldo y tiempo, ya que algo
+creado por alguien suele tardar más que si lo hiciera un algoritmo.
+Dependiendo del <strong>tipo de proyecto</strong>, las <strong>plataformas</strong> donde se
+quiera publicar y el <strong>presupuesto</strong> del equipo de desarrollo en el que
+nos encontremos esto puede ser realizable o simplemente imposible de
+soportar.</p>
+
+<p>Hablando de plataformas, un buen ejemplo de lo tenemos en la era de
+principios de los <strong>80</strong>, cuando las <strong>computadoras</strong> caseras eran tan
+<strong>limitadas técnicamente</strong>, sobretodo en espacio en disco, lo que hacía
+imposible incluir todos los recursos o “assets” para hacer juegos
+medianamente grandes. De hecho el uso de técnicas procedimentales en
+videojuegos viene de esto mismo, y como veremos algunos juegos de
+entonces, como Rogue, fueron los precursores de la generación de
+contenido de este tipo.</p>
+
+<p><img src="2015-01-06-Procedimental/BBC_Micro_Front_Restored.jpg" alt="BBC Micro" /></p>
+
+<p><sub>Los BBC Micro fueron una serie de microcomputadores que se hicieron bastante populares al principio de la década de los 80 en el Reino Unido. Tuvieron varios lanzamientos de videojuegos que generaban contenido con técnicas procedimentales.</sub></p>
+
+<p>Hoy en día ya no tenemos esas limitaciones técnicas, a no ser que las queramos imponer nosotros mismos, ni siquiera en dispositivos móviles, que hace años que incluyen memoria lo suficientemente rápida y amplia como para incluir el contenido necesario para el juego. Por ello actualmente la generación de contenido procedimental es algo que viene ligado al mismo diseño del juego. Como es el caso de este mismo proyecto, el propio diseño del juego favorece el uso de estas técnicas para generar una infinidad de situaciones que son lo suficientemente distintas como alargar su vida durante cientos de horas. Y los ejemplos más representativos de esto puede que sean Minecraft y Spenlunky, juegos muy diferentes en su jugabilidad y ritmo, pero que independientemente del número de veces que se jueguen, siempre pueden brindar una experiencia diferente a la anterior.</p>
+
+<p>Pero esto no solo viene ligado a lo que el diseñador del juego quiere,
+sino a cómo, hoy en día, se consume el contenido audiovisual. En una era
+donde estamos saturados con entretenimiento desde los móviles,
+computadores y demás dispositivos electrónicos conectados a internet, la
+manera en la consumimos contenido es mucho más rápida que antes, no
+tenemos el tiempo suficiente para probar todo, y mucho menos para verlo
+o jugarlo de principio a fin. Por esto tiene más sentido la creación de
+obras que se puedan consumir de forma episódica y de forma
+autoconclusiva. En el caso de los videojuegos, que cada partida tenga un
+inicio y un fin, independientemente de que luego el usuario pueda ver un
+progreso global a lo largo de las diferentes sesiones. En este sentido
+la generación de contenido mediante técnicas procedimentales son
+realmente adecuadas para producir una experiencia distinta, si no única,
+en cada partida.</p>
+
+<h3 id="contenido-a-medida-del-usuario">Contenido a medida del usuario</h3>
+
+<p>Usando métricas y redes neuronales y midiendo como el jugador responde
+antes ciertas situaciones, el nuevo contenido generado podría ser
+manipulado dependiendo de los gustos y necesidades del jugador o mejorar
+su aprendizaje y adaptabilidad a las mecánicas del juego. De la misma
+manera puede ayudar a la creatividad, produciendo situaciones
+radicalmente diferentes a las que podríamos esperar en algo creado
+manualmente por un humano, ofreciendo una solución válida pero, a su
+vez, inesperable.</p>
+
+<p>Por supuesto no creo que haga falta ni decir que estas técnicas generan
+reticencia entre los diseñadores y artistas, a los que les hace perder
+el control creativo sobre ciertos elementos del videojuego. Este es uno
+de los claros motivos por lo que algo como la generación procedural de
+texturas, que hace unos años prometía ser una buena solución a este
+tedioso proceso de creación de assets, ha caído en el olvido cuando hoy
+en día las herramientas de diseño proporcionan una facilidad de uso que
+permite trabajar muy rápidamente a los artistas y con total control
+creativo.</p>
+
+<p>Pero el uso de técnicas procedimentales también puede ayudar a entender
+el diseño. Al diseñar esos mismos procedimientos estamos siendo
+afrontados con las limitaciones, reglas y problemas que un diseñador o
+artista tiene que afrontar a la hora de trabajar, nos ayuda a entender
+este proceso de creación manual de contenido porque tenemos que tener en
+cuenta y entender este proceso manual para poder automatizarlo.</p>
+
+<h3 id="propiedades-deseadas-en-la-generacin-del-contenido">Propiedades deseadas en la generación del contenido</h3>
+
+<p>Las soluciones basadas en generación procedimental de contenido tiene
+una serie de propiedades deseables o requeridas que pueden ser
+diferentes para cada aplicación, algunas de estas propiedades comunes
+pueden ser:</p>
+
+<ul>
+  <li>
+    <p><strong>Velocidad</strong>: los requerimientos de velocidad puede variar notablemente según el rango de la aplicación. Normalmente es necesario que esta sea superior a como trabajaría un humano si está realizando un trabajo que se considera similar, pero esto no es tan importante si lo que requiere el proyecto es la creación de contenido de manera creativa y que solo se puede proporcionar por estos mecanismos algorítmicos.</p>
+  </li>
+  <li>
+    <p><strong>Confiabilidad</strong>: el generador de contenido debe garantizar que este se crea dentro de unos criterios de calidad. Debe cumplir una reglas o parámetros, que en mayor parte son establecidas de manera fija en el propio algoritmo, aunque también puede ser el caso en el que el usuario tenga algo de influencia sobre estos, siempre de manera inconsciente o indirecta.</p>
+  </li>
+  <li>
+    <p><strong>Control</strong>: sería deseable proporcionar cierto control sobre este, permitiendo especificar ciertos aspectos iniciales del mismo contenido que se va a crear. Por ejemplo estaríamos hablando de indicar que paleta de colores o texturas a utilizar en cierta situación, si las rocas deberían ser más suaves o agudas, el rango de tamaños que estas pueden tomar, etc. Pero demasiado control rompe el propio concepto y nunca debe caer en lo predecible. Cuando el resultado de un proceso de generación procedimental es demasiado predecible entonces es que se está haciendo mal.</p>
+  </li>
+  <li>
+    <p><strong>Expresividad y diversidad</strong>: medir la expresividad es difícil y generar contenido que es diverso a la vez que cumple cierta calidad no es nada trivial. Entre generar el contenido de manera totalmente aleatoria y probablemente de poca calidad o generar contenido muy predecible hay que encontrar un compromiso intermedio, con suficiente diversidad a la vez que calidad.</p>
+  </li>
+  <li>
+    <p><strong>Creatividad y credibilidad</strong>: generalmente queremos que el contenido no parezca creado por un generador automático, sino que parezca diseñado por una persona.</p>
+  </li>
+</ul>
+
+  </article>
+
+</div>
+
+  </div>
+  <footer class="site-footer">
+  <div>
+    <p class="text"><a href="mailto:rub3nmv@gmail.com">rub3nmv@gmail.com</a><br>
+    This site was made with <a href="http://jekyllrb.com/">Jekyll generator</a>, <a href="http://purecss.io/">PureCSS</a> and <a href="http://fortawesome.github.io/">Font Awesome</a>.</p>
+  </div>
+</footer> <!-- <script src="/js/jquery-1.11.3.min.js"></script> -->
+<script src="/js/minified-legacyie.js"></script>
+<script src="/js/utils.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+  
+  Growing Tree - Creando laberintos &middot; Rubén Martínez Vilar
+  
+  </title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <!-- RSS -->
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml"> -->
+</head>
+
+<body>
+  <header class="main-header">
+    <!-- MAIN MENU -->
+<nav class="site-menu pure-menu pure-menu-horizontal">
+  <a href="/" class="pure-menu-heading pure-menu-link">Rubén Martínez Vilar</a>
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#about">About</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#projects">Projects</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/blog/#posts">Blog</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#contact">Contact</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="https://dl.dropboxusercontent.com/u/15074300/RubenMartinezVilar-CV.pdf">CV</a></li>
+  </ul>
+</nav>
+
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+  
+  </header>
+  <div class="page-content">
+    <div class="post">
+
+  <header class="post-header">
+    <h3 class="post-title">Growing Tree - Creando laberintos</h3>
+    <p class="post-meta">Feb 3, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>Vamos a estudiar un poco más a fondo algunos de los algoritmos para la
+generación procedural de mazmorras, pero tenemos que empezar por lo básico, un
+laberinto.</p>
+
+<p>Existen decenas de algoritmos para la resolución y creación de mazmorras de
+manera procedimental, y algunos de los factores imporantes que debemos tener en
+cuenta para escoger uno son el coste temporal, la variedad de resultados que nos
+permite obtener, la complejidad del mismo algoritmo y la personalización que
+podamos realizar sobre este para adaptarlo a nuestro proyecto.</p>
+
+<p>Antes de pasar al algoritmo conocido como Growing Tree debemos repasar
+rápidamente ciertos conceptos básicos. Por un lado tenemos los <strong>vértices</strong> o
+<strong>nodos</strong>, que en el caso que nos compete, pueden ser llamados <strong>celdas</strong>. Estos
+nodos se unen mediante <strong>aristas</strong>, que es básicamente una linea. Una colección
+de vértices y aristas es lo que llamamos <strong>grafo</strong>. Si desde una nodo podemos
+alcanzar cualquier otro nodo del grafo siguiente las aristas entonces decimos
+que es un <strong>grafo conexo</strong>.</p>
+
+<p><img src="2015-02-03-Growing-Tree-Creando-laberintos/grafos-1.png" alt="Grafo conexo" /></p>
+
+<p>Si eliminamos los ciclos del grafo, obtenemos un grafo acíclico, una cuando es
+grafo acíclico es conexo, lo que tenemos es llamado un <strong>árbol</strong>.</p>
+
+<p><img src="2015-02-03-Growing-Tree-Creando-laberintos/grafos-2.png" alt="Arbol" /></p>
+
+<p>Una grafo puede estar compuesto por varios árboles, pero existe uno que
+comprende todos los nodos de un grafo, tenemos un <strong>árbol de expansión (Spanning
+Tree)</strong>.</p>
+
+<p><img src="2015-02-03-Growing-Tree-Creando-laberintos/spanning-tree.png" alt="Arbol de expansion" /></p>
+
+<p>Y los árboles de expansión son la misma esencia de la estructura de los
+algoritmos de generación de laberintos.</p>
+
+<p><img src="2015-02-03-Growing-Tree-Creando-laberintos/spanning-tree-is-maze.png" alt="Arbol de expansion laberinto" /></p>
+
+<h1 id="aldous-broder">Aldous-Broder</h1>
+
+<p>Dos investigadores llamados D. Aldous y A. Broder, trabajando
+independientemente, estaban estudiando los árboles de expansión cuando diseñaron
+el siguiente algoritmo:</p>
+
+<ol>
+  <li>
+    <p>Escoge un vértice cualquiera.</p>
+  </li>
+  <li>
+    <p>Escoge otro vértice aleatorio entre los vecinos de este. Si el nodo no ha
+sido visitado con anterioridad, nos movemos a este y lo agregamos, junto a
+la arista, al árbol de expansión.</p>
+  </li>
+  <li>
+    <p>Repetir el paso 2 hasta que todos los vértices hayan sido visitados.</p>
+  </li>
+</ol>
+
+<p>Un algoritmo extremadamente simple que selecciona cualquier de todos los
+posibles árboles de expansión del grafo con la misma probabilidad. Tambien hay
+que decir que es una técnica muy ineficiente, ya que su naturaleza aleatoria a
+la hora de escoger el nodo hace que se puedan volver a visitar los mismos
+vértices una y otra vez.</p>
+
+<p><img src="2015-02-03-Growing-Tree-Creando-laberintos/aldous-broder.gif" alt="Aldous-Broder" /></p>
+
+<p>Posteriormente este método fue mejorado por otros como el algoritmo de Wilson,
+entre otros, pero vamos a pasar directamente al que nos interesa estudiar, que
+entra dentro de los algoritmos que hacen uso de la técnica de escoger un nodo
+aleatoriamente en cada paso, también conocido como <strong>Drunken Walk</strong>, aunque en
+este caso hay matices.</p>
+
+<h2 id="growing-tree">Growing Tree</h2>
+
+<p>Entre los algoritmos de generación de laberintos, el llamado Growing Tree es
+quizás el más personalizable. La premisa básica es la de escoger un nodo del
+grafo aleatoriamente y agregarlo a una lista de “celdas activas”. En cada paso
+posterior miramos a uno de los nodos de la lista y agregamos uno de sus vecinos
+<strong>no visitados</strong>. Si el nodo no tiene más vecinos sin visitar, lo quitamos de la
+lista y probamos con otro nodo. El proceso termina cuando la lista se queda
+vacía.</p>
+
+<p>Debemos que tener en cuenta que cada celda o nodo tiene 4 bordes que tocan con
+otros nodos o con el exterior de la mazmorra, por lo que cada nodo deberá ser
+visitado 4 veces. Esto no se produce en la misma pasada, sino que al
+introducirlos en la lista y luego hacer el backtracking nos vamos asegurando que
+ese nodo tiene aún bordes libres, en caso contrario lo podemos sacar y lo damos
+como cerrado.</p>
+
+<p>Cuando estamos comprobando un vecino debemos determinar si se ha de crear un
+pared según el caso. Para los bordes que den al exterior de los límites de la
+mazmorra simplemente creamos la pared, cuando nos movemos a una nueva celda no
+visitada antes, entonces simplemente creamos pasillo entre estas, pero cuando
+nos topamos con otro nodo que ya está en la lista de activos entonces creamos
+una pared en ese borde y nos movemos a otro de los vecinos. Este mismo proceso
+nos permite que siempre se pueda alcanzar cualquier celda desde otra.</p>
+
+<p>Un aspecto interesante es como el uso de distintas heurísticas para seleccionar
+un nodo de la lista de activos cambia el comportamiento de este algoritmo. Por
+ejemplo, si escogemos el nodo más reciente, el último que se agregó a la lista,
+obtenemos un comportamento de pila recursiva. Este comportamiento es el mismo
+que encontramos en otro algoritmo llamado Recursive Backtracker. Si escogemos un
+nodo aleatoriamente, entonces tenemos un comportamiento del estilo del algoritmo
+de Prim.</p>
+
+<p>En la implementación que he realizado sobre Unity podemos ver el comportamiento
+al usar el nodo más reciente agregado a la lista.</p>
+
+<p><img src="2015-02-03-Growing-Tree-Creando-laberintos/maze-growing-tree-example-1.gif" alt="Growing Tree Maze 1" /></p>
+
+<p>Y también cuando escogemos un nodo aleatorio cada vez, como en el algoritmo de
+Prim.</p>
+
+<p><img src="2015-02-03-Growing-Tree-Creando-laberintos/maze-growing-tree-example-2.gif" alt="Growing Tree Maze 2" /></p>
+
+<p>Modificando el algoritmo incluso podríamos hacer que se generen habitaciones en
+vez de pasillos. El uso de este método similar al Recursive Backtracker nos
+permite determinar y marcar cuando una habitación se ha completado, momento en
+el que se comienzan a desapilar nodos y retoma el camino hacia la creación de
+otra habitación. Pero la cosa se complica si queremos tener habitaciones y
+pasillos en es mismo mapa, por ello este algoritmo no es de mucha utilidad más
+allá de la generación de laberintos.</p>
+
+<h2 id="conclusin">Conclusión</h2>
+
+<p>El algoritmo de Growing Tree es interesante en el sentido en que se puede
+personalizar y ampliarlo para generar algo más que laberintos, ensanchando los
+pasillos o uniendo los adyacentes para generar habitaciones y obtener una
+estructura más similar a lo que busco para el videojuego que quiero crear, pero
+como veremos hay otros algoritmos que son más adecuados y rápidos para generar
+mapas grandes.</p>
+
+<p>Podemos decir finalmente que este algoritmo tiene sus <strong>ventajas</strong>:</p>
+
+<ul>
+  <li>Esta basado en técnicas muy simple.</li>
+  <li>Es flexible y puede comportarse como otros algoritmos según su
+implementación.</li>
+</ul>
+
+<p>Pero también hay algunas <strong>desventajas</strong>:</p>
+
+<ul>
+  <li>No es el algoritmo más rápido de por sí, y habría que utilizar una mezcla con
+árboles de partición (BSP, Quadtree) para generar laberintos realmente grandes.</li>
+  <li>Generalmente solo se puede utilizar para la creación laberintos, otro tipo de
+estructuras como mazmorras o cuevas están fuera del alcance.</li>
+</ul>
+
+  </article>
+
+</div>
+
+  </div>
+  <footer class="site-footer">
+  <div>
+    <p class="text"><a href="mailto:rub3nmv@gmail.com">rub3nmv@gmail.com</a><br>
+    This site was made with <a href="http://jekyllrb.com/">Jekyll generator</a>, <a href="http://purecss.io/">PureCSS</a> and <a href="http://fortawesome.github.io/">Font Awesome</a>.</p>
+  </div>
+</footer> <!-- <script src="/js/jquery-1.11.3.min.js"></script> -->
+<script src="/js/minified-legacyie.js"></script>
+<script src="/js/utils.js"></script>
+
+</body>
+
+</html>

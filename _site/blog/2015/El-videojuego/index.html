@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>
+  
+  El videojuego &middot; Rubén Martínez Vilar
+  
+  </title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <!-- RSS -->
+  <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml"> -->
+</head>
+
+<body>
+  <header class="main-header">
+    <!-- MAIN MENU -->
+<nav class="site-menu pure-menu pure-menu-horizontal">
+  <a href="/" class="pure-menu-heading pure-menu-link">Rubén Martínez Vilar</a>
+  <ul class="pure-menu-list">
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#about">About</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#projects">Projects</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/blog/#posts">Blog</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="/#contact">Contact</a></li>
+    <li class="pure-menu-item"><a class="pure-menu-link" href="https://dl.dropboxusercontent.com/u/15074300/RubenMartinezVilar-CV.pdf">CV</a></li>
+  </ul>
+</nav>
+
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
+            <ul class="pure-menu-children">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+  
+  </header>
+  <div class="page-content">
+    <div class="post">
+
+  <header class="post-header">
+    <h3 class="post-title">El videojuego</h3>
+    <p class="post-meta">Jan 5, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>Aunque acompañaré el proyecto con un documento de diseño detallado sobre el videojuego, voy a explicar brevemente la idea principal de este y que elementos incluirá para hacernos una idea.</p>
+
+<h2 id="descripcin-y-objetivos">Descripción y objetivos</h2>
+<p>Se basa en los clásicos juegos estilo rogue-like, pero trasladado a un entorno de aventuras y puzles tipo The Legend of Zelda (como el de Super Nintendo).</p>
+
+<p>El personaje principal tendrá una barra de vida, distintas armas (solo una equipada), objetos para recuperar vida, objetos especiales de misión…</p>
+
+<p>Consistirá en un mapa externo donde encontraremos acceso a las distintas mazmorras y posiblemente a alguna tienda donde comprar pociones y otros objetos.</p>
+
+<p>Por otro lado tendremos las mazmorras. Estas se generan de manera procedimental, siendo siempre distintas al salir y volver a entrar o al morir completamente y reiniciar el juego desde el mapa o siendo iguales siempre dentro de la misma partida, según vea cual es el método más divertido y menos frustrante.</p>
+
+<p>Las mazmorras consistirán en:</p>
+
+<ul>
+  <li>Habitaciones conectadas entre sí por pasillos.</li>
+  <li>Objetos comunes para mejorar o recuperar la vida.</li>
+  <li>Objetos tipo armas arrojadizas.</li>
+  <li>Objetos especiales de mazmorra como puedan ser mapas, brújulas, llaves para abrir puertas o cofres…</li>
+  <li>Enemigos que pueden atacar al personaje y este también puede atacarlos usando el arma principal o lo que se encuentre por el camino.</li>
+  <li>Trampas como paneles de pinchos, fosos, cofres falsos…</li>
+  <li>Cada habitación tiene un rol (puzle, llave, etc.)</li>
+  <li>Jefe final de mazmorra (Objetivo opcional)</li>
+</ul>
+
+<p>Tanto la distribución de las habitaciones como de todo lo demás se generará de manera procedimental, siempre habiendo un mapa y un jefe (Objetivo opcional). Los demás elementos variarán según la dificultad que se le quiera imprimir a la mazmorra, que irá aumentando según se conquisten más mazmorras.</p>
+
+<p>El número de mazmorras será fijo (unas 7 u 8) y el juego tendrá un final o quizá lo haga infinito, llegando a un nivel en que las mazmorras no se sean más grandes o complicadas pero la dificultad sea suficiente para que el jugador experimentado pueda morir con la misma posibilidad. Esto lo decidiré cuando haga pruebas sobre una versión casi terminada del juego, ya que no sería muy difícil intercambiar entre ambas.</p>
+
+<h2 id="aspecto-visual">Aspecto visual</h2>
+<p>Visualmente será un juego 3D con vista aérea, posiblemente tipo isométrica u ortográfica como la que podemos encontrar en el juego Monument Valley.</p>
+
+<p>El aspecto en general tendrá un estilo con formas simples y con texturas pixeladas como vemos en Minecraft que le dan un toque a dibujo animado, como podemos ver en la textura de tierra y césped.</p>
+
+<p><img src="2015-01-05-El-videojuego/minecraft-textura.jpg" alt="Textura minecraft" /></p>
+
+<p>Los objetos en general serán modelos 3D, pero es posible que utilice sprites 2D para personajes y enemigos. Esta técnica visual se conoce como <a href="http://www.gamasutra.com/view/feature/130911/dynamic_2d_imposters_a_simple_.php">billboarding</a> y se refiere a que los sprites siempre miran a cámara, como lo hacía Doom. Además porque es un técnica que me agrada, otro de los motivos de escoger este estilo es porque los modelos 3D son más difíciles de animar correctamente y no es ese el objetivo del proyecto. En cualquier caso, si al final escogiera 3D para los modelos de los personajes, intentaría hacer algo simple, formado por cubos, que no necesite mucha animación y trabajo de texturas.</p>
+
+<h2 id="herramientas">Herramientas</h2>
+<p><strong>Motor de juego</strong><br />
+Debido a que el objetivo principal del juego es demostrar la generación procedimental de las mazmorras se va a utilizar Unity en su versión free como motor de juego. Unity proporciona diversas herramientas integradas con un editor, estas incluyen un motor gráfico, motor de físicas, sistema de audio y sistema de GUI entre otros, suficiente para cubrir las necesidades de desarrollo.</p>
+
+<p><strong>Diseño de assets</strong><br />
+Para los elementos 2D del juego como los botones de menú, títulos y resto de elementos del HUD, así como otros elementos 2D como texturas se utilizará The Gimp o Paint.net, ambos editores gratuitos. Para el diseño de los assets 3D se hará uso de Blender.</p>
+
+<h2 id="requisitos-hardware-y-software">Requisitos hardware y software</h2>
+<p>Estos son los requisitos que deberá cumplir el sistema cliente para ejecutar el juego:</p>
+
+<ul>
+  <li>Windows 7 o superior.</li>
+  <li>Teclado y ratón o mando de juego con soporte para XInput.</li>
+  <li>Sistemas basados en Linux.</li>
+  <li>Tarjetas gráficas HD Intel 3000 o superior, NVIDIA o ATI.</li>
+</ul>
+
+  </article>
+
+</div>
+
+  </div>
+  <footer class="site-footer">
+  <div>
+    <p class="text"><a href="mailto:rub3nmv@gmail.com">rub3nmv@gmail.com</a><br>
+    This site was made with <a href="http://jekyllrb.com/">Jekyll generator</a>, <a href="http://purecss.io/">PureCSS</a> and <a href="http://fortawesome.github.io/">Font Awesome</a>.</p>
+  </div>
+</footer> <!-- <script src="/js/jquery-1.11.3.min.js"></script> -->
+<script src="/js/minified-legacyie.js"></script>
+<script src="/js/utils.js"></script>
+
+</body>
+
+</html>
