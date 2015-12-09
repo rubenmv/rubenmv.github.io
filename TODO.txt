@@ -1,2 +1,0 @@
-- Soporte para noscript.
-- Soporte para IE8.
