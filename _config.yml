@@ -13,7 +13,7 @@ sass:
   style: compressed
 
 # Build settings
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 author:
   name: 'Rub&eacute;n Mart&iacute;nez Vilar'
@@ -21,6 +21,7 @@ author:
 # Blog
 # Creates the posts into blog folder
 permalink: '/blog/:year/:title/'
+gems: [jekyll-paginate]
 paginate: 10
 # This allows to call paginator from subfolder blog/index.html and separates pages in folders
 paginate_path: "/blog/page:num/"

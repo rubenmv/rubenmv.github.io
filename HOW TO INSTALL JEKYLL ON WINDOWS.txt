@@ -1,0 +1,10 @@
+All this needs a command prompt with administrative rights.
+1. Install Chocolatey.
+2. Install Ruby: choco install ruby -y
+3. Install Jekyll: gem install jekyll
+
+If you're going to use pagination also install paginate gem:
+  gem install jekyll-paginate
+and set "gems: [jekyll-paginate]" on "_config.yml".
+
+Run Jekyll with "jekyll serve" or build with "jekyll build".
