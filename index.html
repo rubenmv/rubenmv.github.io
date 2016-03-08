@@ -8,7 +8,7 @@
 	<meta name="description" content="Ruben Martinez Vilar Portfolio" />
 	<meta name="keywords" content="portfolio, programming, dev, web, games" />
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
-	<link rel="stylesheet" href="res/style.css" />
+	<!--<link rel="stylesheet" href="res/style.css" />-->
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	<!--[if lt IE 9]>
 		<script src="res/html5shiv.min.js"></script>
@@ -355,6 +355,18 @@
 		</footer>
 	</div>
 
+  <!--CSS-->
+  <script>
+      var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = 'res/style.css';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(cb);
+      else window.addEventListener('load', cb);
+    </script>
 	<!--SCRIPTS-->
 	<script src="res/main.js"></script>
 </body>
