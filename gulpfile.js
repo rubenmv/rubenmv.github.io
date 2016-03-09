@@ -16,7 +16,7 @@ gulp.task('js', function(){
 
 // Minify CSS
 gulp.task('css', function () {
-  return gulp.src(['css/font-awesome.min.css', 'css/reset.css', 'css/grid.css', 'css/style.css'])
+  return gulp.src(['css/font-awesome.min.css', 'css/style.css'])
   .pipe(concat('style.css'))
   .pipe(unCSS({
             html: ['index.html']
