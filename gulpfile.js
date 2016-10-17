@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 // Include plugins
 var uglify = require('gulp-uglify');
-var minifyCSS = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var unCSS = require('gulp-uncss');
 var concat = require('gulp-concat');
 
@@ -21,7 +21,7 @@ gulp.task('css', function () {
   .pipe(unCSS({
             html: ['index.html']
         }))
-  .pipe(minifyCSS())
+  .pipe(cleanCSS())
   .pipe(gulp.dest('./res'))
 });
 
