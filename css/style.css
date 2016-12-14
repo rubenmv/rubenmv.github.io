@@ -271,6 +271,12 @@ body {
   font-size: 0.8em;
   line-height: 1.5em;
 }
+.works-description img {
+  opacity: 0.7; 
+}
+.works-description img:hover {
+  opacity: 1;
+}
 /* Contact *****************************************************  */
 
 #contact {
