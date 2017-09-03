@@ -244,6 +244,11 @@ body {
 #presentation {
   text-align: left;
 }
+
+.font-icon {
+  font-size: 6em !important;
+}
+
 /* Works *****************************************************  */
 #works {
   border-top: 1px dashed rgba(255, 255, 255, 0.3);
