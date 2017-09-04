@@ -1,0 +1,9 @@
+This site uses Gulp Task Manager to run some tasks before publishing. To install Gulp:
+
+1. Install Node.js with npm
+2. Open terminal and install gulp:
+	[sudo] npm install --global gulp
+3. Prepare project:
+	npm install
+4. Run Gulp task:
+	gulp build (<-- or the name of the task to run)
