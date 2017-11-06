@@ -19,6 +19,13 @@ html {
 	box-sizing: inherit;
 }
 
+/******************/
+/* CUSTOM CLASSES */
+/******************/
+.hidden {
+  display: none !important;
+}
+
 /* <GRID SYSTEM> */
 @media (min-width: 45em) { /* 45 × 16px = 720px */
 	.grid {
