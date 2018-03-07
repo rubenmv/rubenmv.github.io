@@ -216,6 +216,76 @@ function DarTurno(usuario) {
         }); 
 		}
 
+				/*Turno del paciente*/
+function DarSalida(usuario) {
+		var _title = "";
+
+		if (usuario == "2010990")
+		{
+			_title = "Vicent Chova Pons";
+			_especialista = "Dra. Eugenia Margarita";
+			_especialidad = "Alergología";
+			_consulta = "16";
+			_turnoActual = "00-00-00";
+			_refCita = "10-20-33";
+			_turnosSiguientes = "Sin llegada, 91-55-24";
+		}
+		else if(usuario == "2009875")
+		{
+			_title = "Gema Mañas Marcos";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
+			_consulta = "03";
+			_turnoActual = "00-00-00";
+			_refCita = "55-00-03";
+			_turnosSiguientes = "31-52-28, 66-04-64";
+		}
+
+			var param = JSON.stringify({ 
+						"priority": _priority,
+					  "condition": _condition,
+					  "collapseKey": _collapsedKey,
+					  "apns-collapse-id": _collapsedKey,
+					  "collapse_key": _collapsedKey,
+						"notification":
+						{
+							"silent": true,
+							"title": _title,
+							"body": "Sala de espera. Es su turno, por favor entre a la consulta.",
+							"sound": "default"
+						},
+						"data": 
+						{
+							"paciente_id": usuario,
+							"tipo_notificacion": "SalaDeEspera",
+							"turno": _turnoActual,
+							"ref_cita": _refCita,
+							"especialidad": _especialidad,
+							"especialista": _especialista,
+							"consulta": _consulta,
+							"turnos_siguientes": _turnosSiguientes
+						}
+					});
+
+			$.ajax({
+            type : 'POST',
+            url : _url,
+            headers : {
+                Authorization : _authorization
+            },
+            contentType : _contentType,
+            data : param,
+            success : function(response) {
+            	window.alert("Peticion enviada correctamente");
+                console.log(response);
+            },
+            error : function(xhr, status, error) {
+            	window.alert("Hubo problema al realizar la peticion");
+                console.log(xhr.error);                   
+            }
+        }); 
+		}
+
 
 			function EnviarEncuesta(usuario) {
 			var param = JSON.stringify({ 
