@@ -90,7 +90,7 @@ body {
 }
 
 .logo {
-	width: 30%;
+	width: 20%;
 }
 
 .titulo * {
@@ -99,12 +99,12 @@ body {
 	margin: 0.5em;
 }
 .titulo h2 {
-	font-size: 5em;
+	font-size: 4em;
 	color: #0078C9;
 	white-space: nowrap; 
 }
 h3 {
-	font-size: 4em;
+	font-size: 3em;
 }
 .titulo img {
 	width: 2em;
