@@ -23,7 +23,7 @@ html {
 
 
 div {
-	margin: 2em 0;
+	margin: 1em 0;
 }
 
 img {
@@ -47,7 +47,7 @@ body {
 
 .boton {
 	margin: auto;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.2em;
 	display: block !important;
 	max-width: 98%;
 	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
@@ -90,7 +90,7 @@ body {
 }
 
 .logo {
-	width: 20%;
+	width: 10%;
 }
 
 .titulo * {
@@ -99,12 +99,12 @@ body {
 	margin: 0.5em;
 }
 .titulo h2 {
-	font-size: 4em;
+	font-size: 3em;
 	color: #0078C9;
 	white-space: nowrap; 
 }
 h3 {
-	font-size: 3em;
+	font-size: 2em;
 }
 .titulo img {
 	width: 2em;
