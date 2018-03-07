@@ -5,15 +5,34 @@
 			_url = "https://fcm.googleapis.com/fcm/send",
 			_especialista = "Dra. Eugenia Margarita",
 			_especialidad = "Alergología",
+			_consulta = "16",
+			_turnoActual = "",
+			_refCita = "",
+			_turnosSiguiente = "",
 			_authorization = 'key=' + 'AAAAKZ_ED5U:APA91bF5CEKOZqHcvpKkINtl-rNOyquzjFdBBlzz4b1IwnJuIXRbhKwmALw-r4yUfaqClqLJCqD7jkPWMQQ8p_5qYUOsPECoV5xcg9Z8s4tDbf4lPYeI1-MpTokD6bmayb1MTpdOBbuM';
 
 
 /*El paciente llega a la clinica*/
 	function DarLlegada(usuario) {
 		var _title = "";
-		if (usuario = "2010990")
+		if (usuario == "2010990")
 		{
 			_title = "Vicent Chova Pons";
+			_especialista = "Dra. Eugenia Margarita";
+			_especialidad = "Alergología";
+			_consulta = "16";
+			_turnoActual = "10-20-20";
+			_refCita = "10-20-33";
+			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
+		}
+		else if(usuario == "2009875"){
+			_title = "Gema Mañas Marcos";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
+			_consulta = "03";
+			_turnoActual = "35-45-26";
+			_refCita = "55-00-03";
+			_turnosSiguientes = "26-87-88, 55-00-03, 31-52-28, 66-04-64";
 		}
 
 			var param = JSON.stringify({ 
@@ -32,12 +51,12 @@
 						{
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
-							"turno": "10-20-20",
-							"ref_cita": "10-20-33",
+							"turno": _turnoActual,
+							"ref_cita": _refCita,
 							"especialidad": _especialidad,
 							"especialista": _especialista,
-							"consulta": "16",
-							"turnos_siguientes": "23-25-55, 10-20-33, Sin llegada, 91-55-24"
+							"consulta": _consulta,
+							"turnos_siguientes": _turnosSiguientes
 						}
 					});
 
@@ -63,9 +82,24 @@
 /*Pasa un turno*/
 function SiguienteTurno(usuario) {
 		var _title = "";
-		if (usuario = "2010990")
+		if (usuario == "2010990")
 		{
 			_title = "Vicent Chova Pons";
+			_especialista = "Dra. Eugenia Margarita";
+			_especialidad = "Alergología";
+			_consulta = "16";
+			_turnoActual = "10-25-04";
+			_refCita = "10-20-33";
+			_turnosSiguientes = "10-20-33, Sin llegada, 91-55-24";
+		}
+		else if(usuario == "2009875"){
+			_title = "Gema Mañas Marcos";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
+			_consulta = "03";
+			_turnoActual = "26-87-88";
+			_refCita = "55-00-03";
+			_turnosSiguientes = "55-00-03, 31-52-28, 66-04-64";
 		}
 
 			var param = JSON.stringify({ 
@@ -84,12 +118,12 @@ function SiguienteTurno(usuario) {
 						{
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
-							"turno": "10-25-04",
-							"ref_cita": "10-20-33",
+							"turno": _turnoActual,
+							"ref_cita": _refCita,
 							"especialidad": _especialidad,
 							"especialista": _especialista,
-							"consulta": "16",
-							"turnos_siguientes": "10-20-33, Sin llegada, 91-55-24"
+							"consulta": _consulta,
+							"turnos_siguientes": _turnosSiguientes
 						}
 					});
 
@@ -116,9 +150,26 @@ function SiguienteTurno(usuario) {
 		/*Turno del paciente*/
 function DarTurno(usuario) {
 		var _title = "";
-		if (usuario = "2010990")
+
+		if (usuario == "2010990")
 		{
 			_title = "Vicent Chova Pons";
+			_especialista = "Dra. Eugenia Margarita";
+			_especialidad = "Alergología";
+			_consulta = "16";
+			_turnoActual = "10-20-33";
+			_refCita = "10-20-33";
+			_turnosSiguientes = "Sin llegada, 91-55-24";
+		}
+		else if(usuario == "2009875")
+		{
+			_title = "Gema Mañas Marcos";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
+			_consulta = "03";
+			_turnoActual = "55-00-03";
+			_refCita = "55-00-03";
+			_turnosSiguientes = "31-52-28, 66-04-64";
 		}
 
 			var param = JSON.stringify({ 
@@ -130,19 +181,19 @@ function DarTurno(usuario) {
 						"notification":
 						{
 							"title": _title,
-							"body": "Sala de espera. Quedan 3 turnos.",
+							"body": "Sala de espera. Es su turno, por favor entre a la consulta.",
 							"sound": "default"
 						},
 						"data": 
 						{
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
-							"turno": "10-20-33",
-							"ref_cita": "10-20-33",
+							"turno": _turnoActual,
+							"ref_cita": _refCita,
 							"especialidad": _especialidad,
 							"especialista": _especialista,
-							"consulta": "16",
-							"turnos_siguientes": "Sin llegada, 91-55-24"
+							"consulta": _consulta,
+							"turnos_siguientes": _turnosSiguientes
 						}
 					});
 
