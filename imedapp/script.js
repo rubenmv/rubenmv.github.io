@@ -44,7 +44,7 @@
 						"notification":
 						{
 							"title": _title,
-							"body": "Sala de espera. Quedan 2 turnos.",
+							"body": _especialidad + ". Quedan 2 turnos.",
 							"sound": "default"
 						},
 						"data": 
@@ -111,7 +111,7 @@ function SiguienteTurno(usuario) {
 						"notification":
 						{
 							"title": _title,
-							"body": "Sala de espera. Quedan 1 turno.",
+							"body": _especialidad + ". Queda 1 turno.",
 							"sound": "default"
 						},
 						"data": 
@@ -181,7 +181,7 @@ function DarTurno(usuario) {
 						"notification":
 						{
 							"title": _title,
-							"body": "Sala de espera. Es su turno, por favor entre a la consulta.",
+							"body": _especialidad + ". Es su turno, por favor entre a la consulta.",
 							"sound": "default"
 						},
 						"data": 
@@ -216,8 +216,8 @@ function DarTurno(usuario) {
         }); 
 		}
 
-				/*Turno del paciente*/
-function DarSalida(usuario) {
+				/*Salida del paciente*/
+	function DarSalida(usuario) {
 		var _title = "";
 		if (usuario == "2010990")
 		{
@@ -248,7 +248,7 @@ function DarSalida(usuario) {
 						"notification":
 						{
 							"title": _title,
-							"body": "Sala de espera. Quedan 2 turnos.",
+							"body": _especialidad + ". Quedan 2 turnos.",
 							"sound": "default"
 						},
 						"data": 
