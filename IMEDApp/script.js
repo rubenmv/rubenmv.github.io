@@ -41,14 +41,11 @@
 					  "collapseKey": _collapsedKey,
 					  "apns-collapse-id": _collapsedKey,
 					  "collapse_key": _collapsedKey,
-						"notification":
+						"data": 
 						{
 							"title": _title,
 							"body": _especialidad + ". Quedan 2 turnos.",
-							"sound": "default"
-						},
-						"data": 
-						{
+							"sound": "default",
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
 							"turno": _turnoActual,
@@ -108,14 +105,11 @@ function SiguienteTurno(usuario) {
 					  "collapseKey": _collapsedKey,
 					  "apns-collapse-id": _collapsedKey,
 					  "collapse_key": _collapsedKey,
-						"notification":
+						"data": 
 						{
 							"title": _title,
 							"body": _especialidad + ". Queda 1 turno.",
-							"sound": "default"
-						},
-						"data": 
-						{
+							"sound": "default",
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
 							"turno": _turnoActual,
@@ -178,14 +172,11 @@ function DarTurno(usuario) {
 					  "collapseKey": _collapsedKey,
 					  "apns-collapse-id": _collapsedKey,
 					  "collapse_key": _collapsedKey,
-						"notification":
+						"data": 
 						{
 							"title": _title,
 							"body": _especialidad + ". Es su turno, por favor pase a la consulta.",
-							"sound": "default"
-						},
-						"data": 
-						{
+							"sound": "default",
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
 							"turno": _turnoActual,
@@ -245,14 +236,11 @@ function DarTurno(usuario) {
 					  "collapseKey": _collapsedKey,
 					  "apns-collapse-id": _collapsedKey,
 					  "collapse_key": _collapsedKey,
-						"notification":
+						"data": 
 						{
 							"title": _title,
 							"body": _especialidad + ". Quedan 2 turnos.",
-							"sound": "default"
-						},
-						"data": 
-						{
+							"sound": "default",
 							"silent": true,
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
