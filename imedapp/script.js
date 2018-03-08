@@ -8,7 +8,7 @@
 			_consulta = "16",
 			_turnoActual = "",
 			_refCita = "",
-			_turnosSiguiente = "",
+			_turnosSiguientes = "",
 			_authorization = 'key=' + 'AAAAKZ_ED5U:APA91bF5CEKOZqHcvpKkINtl-rNOyquzjFdBBlzz4b1IwnJuIXRbhKwmALw-r4yUfaqClqLJCqD7jkPWMQQ8p_5qYUOsPECoV5xcg9Z8s4tDbf4lPYeI1-MpTokD6bmayb1MTpdOBbuM';
 
 
@@ -25,8 +25,8 @@
 			_refCita = "10-20-33";
 			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2009875"){
-			_title = "Gema Mañas Marcos";
+		else if(usuario == "2003140"){
+			_title = "Adela Donate Escribano";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
@@ -92,8 +92,8 @@ function SiguienteTurno(usuario) {
 			_refCita = "10-20-33";
 			_turnosSiguientes = "10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2009875"){
-			_title = "Gema Mañas Marcos";
+		else if(usuario == "2003140"){
+			_title = "Adela Donate Escribano";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
@@ -161,9 +161,9 @@ function DarTurno(usuario) {
 			_refCita = "10-20-33";
 			_turnosSiguientes = "Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2009875")
+		else if(usuario == "2003140")
 		{
-			_title = "Gema Mañas Marcos";
+			_title = "Adela Donate Escribano";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
@@ -181,7 +181,7 @@ function DarTurno(usuario) {
 						"notification":
 						{
 							"title": _title,
-							"body": _especialidad + ". Es su turno, por favor entre a la consulta.",
+							"body": _especialidad + ". Es su turno, por favor pase a la consulta.",
 							"sound": "default"
 						},
 						"data": 
@@ -229,8 +229,8 @@ function DarTurno(usuario) {
 			_refCita = "10-20-33";
 			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2009875"){
-			_title = "Gema Mañas Marcos";
+		else if(usuario == "2003140"){
+			_title = "Adela Donate Escribano";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
