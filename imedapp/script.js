@@ -219,26 +219,24 @@ function DarTurno(usuario) {
 				/*Turno del paciente*/
 function DarSalida(usuario) {
 		var _title = "";
-
 		if (usuario == "2010990")
 		{
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
 			_especialidad = "Alergología";
 			_consulta = "16";
-			_turnoActual = "00-00-00";
+			_turnoActual = "10-20-20";
 			_refCita = "10-20-33";
-			_turnosSiguientes = "Sin llegada, 91-55-24";
+			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2009875")
-		{
+		else if(usuario == "2009875"){
 			_title = "Gema Mañas Marcos";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
-			_turnoActual = "00-00-00";
+			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
-			_turnosSiguientes = "31-52-28, 66-04-64";
+			_turnosSiguientes = "26-87-88, 55-00-03, 31-52-28, 66-04-64";
 		}
 
 			var param = JSON.stringify({ 
@@ -249,13 +247,13 @@ function DarSalida(usuario) {
 					  "collapse_key": _collapsedKey,
 						"notification":
 						{
-							"silent": true,
 							"title": _title,
-							"body": "Sala de espera. Es su turno, por favor entre a la consulta.",
+							"body": "Sala de espera. Quedan 2 turnos.",
 							"sound": "default"
 						},
 						"data": 
 						{
+							"silent": true,
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
 							"turno": _turnoActual,
