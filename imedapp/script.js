@@ -279,8 +279,8 @@ function DarTurno(usuario) {
 						  "condition": _condition,
 							"data": 
 							{
-								"title": "IMED - ¿Qué le ha parecido nuestro servicio?",
-								"body": "En IMED Hospitales valoramos su opinión",
+								"title": "En IMED Hospitales valoramos su opinión",
+								"body": "¿Qué le ha parecido nuestro servicio?",
 								"tipo_notificacion": "Encuesta",
 								"tipo_encuesta": 2,
 								"encuesta_id": "1",
