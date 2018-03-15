@@ -10,7 +10,7 @@
 			_refCita = "",
 			_turnosSiguientes = "",
 			_fechaCita = "14/03/2018 10:20",
-			_caducidad = 600,
+			_caducidad = 6000,
 			_authorization = 'key=' + 'AAAAKZ_ED5U:APA91bF5CEKOZqHcvpKkINtl-rNOyquzjFdBBlzz4b1IwnJuIXRbhKwmALw-r4yUfaqClqLJCqD7jkPWMQQ8p_5qYUOsPECoV5xcg9Z8s4tDbf4lPYeI1-MpTokD6bmayb1MTpdOBbuM';
 
 
