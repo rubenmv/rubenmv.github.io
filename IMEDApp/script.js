@@ -4,11 +4,13 @@
 			_condition = "'general' in topics",
 			_url = "https://fcm.googleapis.com/fcm/send",
 			_especialista = "Dra. Eugenia Margarita",
-			_especialidad = "Alergología",
+			_especialidad = "Traumatologia y cirugia ortopedica",
 			_consulta = "16",
 			_turnoActual = "",
 			_refCita = "",
 			_turnosSiguientes = "",
+			_fechaCita = "14/03/2018 10:20",
+			_caducidad = 600,
 			_authorization = 'key=' + 'AAAAKZ_ED5U:APA91bF5CEKOZqHcvpKkINtl-rNOyquzjFdBBlzz4b1IwnJuIXRbhKwmALw-r4yUfaqClqLJCqD7jkPWMQQ8p_5qYUOsPECoV5xcg9Z8s4tDbf4lPYeI1-MpTokD6bmayb1MTpdOBbuM';
 
 
@@ -19,7 +21,7 @@
 		{
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
-			_especialidad = "Alergología";
+			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-20-20";
 			_refCita = "10-20-33";
@@ -46,6 +48,9 @@
 							"title": _title,
 							"body": _especialidad + ". Quedan 2 turnos.",
 							"sound": "default",
+							"llegada": true,
+							"fecha_cita": _fechaCita,
+							"caducidad": _caducidad,
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
 							"turno": _turnoActual,
@@ -83,7 +88,7 @@ function SiguienteTurno(usuario) {
 		{
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
-			_especialidad = "Alergología";
+			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-25-04";
 			_refCita = "10-20-33";
@@ -110,6 +115,9 @@ function SiguienteTurno(usuario) {
 							"title": _title,
 							"body": _especialidad + ". Queda 1 turno.",
 							"sound": "default",
+							"llegada": true,
+							"fecha_cita": _fechaCita,
+							"caducidad": _caducidad,
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
 							"turno": _turnoActual,
@@ -149,7 +157,7 @@ function DarTurno(usuario) {
 		{
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
-			_especialidad = "Alergología";
+			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-20-33";
 			_refCita = "10-20-33";
@@ -177,6 +185,9 @@ function DarTurno(usuario) {
 							"title": _title,
 							"body": _especialidad + ". Es su turno, por favor pase a la consulta.",
 							"sound": "default",
+							"llegada": true,
+							"fecha_cita": _fechaCita,
+							"caducidad": _caducidad,
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
 							"turno": _turnoActual,
@@ -214,7 +225,7 @@ function DarTurno(usuario) {
 		{
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
-			_especialidad = "Alergología";
+			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-20-20";
 			_refCita = "10-20-33";
@@ -241,6 +252,9 @@ function DarTurno(usuario) {
 							"title": _title,
 							"body": _especialidad + ". Quedan 2 turnos.",
 							"sound": "default",
+							"llegada": false,
+							"fecha_cita": _fechaCita,
+							"caducidad": _caducidad,
 							"silent": true,
 							"paciente_id": usuario,
 							"tipo_notificacion": "SalaDeEspera",
