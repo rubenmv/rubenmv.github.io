@@ -1,4 +1,4 @@
-	var _contentType = 'application/json;charset=ISO-8859-15',
+	var _contentType = 'application/json;charset=utf-8',
 	_priority = "high",
 	_collapsedKey = "IMED",
 	_condition = "'general' in topics",
@@ -10,7 +10,7 @@
 	_refCita = "",
 	_turnosSiguientes = "",
 	_fechaCita = "14/03/2018 10:20",
-	_caducidad = 6000,
+	_caducidad = 60000,
 	_authorization = 'key=' + 'AAAAKZ_ED5U:APA91bF5CEKOZqHcvpKkINtl-rNOyquzjFdBBlzz4b1IwnJuIXRbhKwmALw-r4yUfaqClqLJCqD7jkPWMQQ8p_5qYUOsPECoV5xcg9Z8s4tDbf4lPYeI1-MpTokD6bmayb1MTpdOBbuM';
 
 
@@ -29,8 +29,8 @@
 		}
 		else if(usuario == "2003140"){
 			_title = "Adela Donate Escribano";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -38,8 +38,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -52,11 +52,14 @@
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
+			"notification" : {
+				"body" : _especialidad + ". Quedan 2 turnos.",
+				"title" : _title,
+				"sound": "default",
+				"content_available": true
+			},
 			"data": 
 			{
-				"title": _title,
-				"body": _especialidad + ". Quedan 2 turnos.",
-				"sound": "default",
 				"llegada": true,
 				"fecha_cita": _fechaCita,
 				"caducidad": _caducidad,
@@ -105,8 +108,8 @@
 		}
 		else if(usuario == "2003140"){
 			_title = "Adela Donate Escribano";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "26-87-88";
 			_refCita = "55-00-03";
@@ -114,8 +117,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "26-87-88";
 			_refCita = "55-00-03";
@@ -128,11 +131,14 @@
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
+			"notification" : {
+				"body" : _especialidad + ". Quedan 1 turno.",
+				"title" : _title,
+				"sound": "default",
+				"content_available": true
+			},
 			"data": 
 			{
-				"title": _title,
-				"body": _especialidad + ". Queda 1 turno.",
-				"sound": "default",
 				"llegada": true,
 				"fecha_cita": _fechaCita,
 				"caducidad": _caducidad,
@@ -184,8 +190,8 @@
 		else if(usuario == "2003140")
 		{
 			_title = "Adela Donate Escribano";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "55-00-03";
 			_refCita = "55-00-03";
@@ -193,8 +199,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "55-00-03";
 			_refCita = "55-00-03";
@@ -207,11 +213,14 @@
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
+			"notification" : {
+				"body" : _especialidad + ". Su turno, puede pasar a la consulta.",
+				"title" : _title,
+				"sound": "default",
+				"content_available": true
+			},
 			"data": 
 			{
-				"title": _title,
-				"body": _especialidad + ". Es su turno, por favor pase a la consulta.",
-				"sound": "default",
 				"llegada": true,
 				"fecha_cita": _fechaCita,
 				"caducidad": _caducidad,
@@ -260,8 +269,8 @@
 		}
 		else if(usuario == "2003140"){
 			_title = "Adela Donate Escribano";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -269,8 +278,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "CardiologÃ­a";
-			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
+			_especialidad = "Cardiología";
+			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -283,11 +292,12 @@
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
+			"notification":
+			{
+				"content_available": true
+			},
 			"data": 
 			{
-				"title": _title,
-				"body": _especialidad + ". Quedan 2 turnos.",
-				"sound": "default",
 				"llegada": false,
 				"fecha_cita": _fechaCita,
 				"caducidad": _caducidad,
@@ -323,24 +333,28 @@
 	}
 
 
-	function EnviarEncuesta(usuario) {
+	function EnviarEncuesta(usuario, tipoEncuesta) {
 		var param = JSON.stringify({ 
 			"priority": _priority,
-			"to": "evh_xxHPu34:APA91bGD3kLTGcyhs5tL2A5plT8qMew24ZVMR9Sj5cCU-RB7zENh5wpu5RTd6OY8sPPcoobULgE34Lc_8HPD9zEQtfUiXC8IUM_yfqKN1toPhJb1Egu3Clx1fk_7dNE4XlZebKKmhCxm",
-						 // "condition": _condition,
-						  "collapseKey": _collapsedKey,
-						  "apns-collapse-id": _collapsedKey,
-						  "collapse_key": _collapsedKey,
-						  "data": 
-						  {
-						  	"title": "En IMED Hospitales valoramos su opiniÃ³n",
-						  	"body": "Â¿QuÃ© le ha parecido nuestro servicio?",
-						  	"tipo_notificacion": "Encuesta",
-						  	"tipo_encuesta": 1,
-						  	"encuesta_id": "1",
-						  	"paciente_id": usuario,
-						  	"pregunta": "Â¿CÃ³mo de satisfecho estÃ¡ con el servicio prestado?"
-						  }
+			//"to": "chWjpFy3axA:APA91bGiBlLkblqXtqibbY9cnYIj_0TkFYhefXPZ4SOZlXZl-VmZaUNipkFTMTqnpSGDdovWkQmtzAI3_vYevvLMYIbbXIZsTWxWZ5PwBzaJi6-0hSNCZOf1W6Zz6BNJhUGlZHIKU57L",
+						  "condition": _condition,
+						 "collapseKey": _collapsedKey,
+						 "apns-collapse-id": _collapsedKey,
+						 "collapse_key": _collapsedKey,
+						 "notification" : {
+							 	"title": "En IMED Hospitales valoramos su opinión",
+							 	"body": "¿Qué le ha parecido nuestro servicio?",
+							 	"sound": "default",
+							 	"content_available": true
+						 },
+						 "data": 
+						 {
+						 	"tipo_notificacion": "Encuesta",
+						 	"tipo_encuesta": tipoEncuesta,
+						 	"encuesta_id": "1",
+						 	"paciente_id": usuario,
+						 	"pregunta": "¿Cómo de satisfecho está con el servicio prestado?"
+						 }
 						});
 
 		$.ajax({
