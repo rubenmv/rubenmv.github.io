@@ -334,28 +334,55 @@
 
 
 	function EnviarEncuesta(usuario, tipoEncuesta) {
-		var param = JSON.stringify({ 
+
+		// Por defecto rellenamos el tipo encuesta 1 (2 respuestas cerradas)
+		var param = { 
 			"priority": _priority,
-			//"to": "chWjpFy3axA:APA91bGiBlLkblqXtqibbY9cnYIj_0TkFYhefXPZ4SOZlXZl-VmZaUNipkFTMTqnpSGDdovWkQmtzAI3_vYevvLMYIbbXIZsTWxWZ5PwBzaJi6-0hSNCZOf1W6Zz6BNJhUGlZHIKU57L",
-						  "condition": _condition,
-						 "collapseKey": _collapsedKey,
-						 "apns-collapse-id": _collapsedKey,
-						 "collapse_key": _collapsedKey,
-						 "notification" : {
-							 	"title": "En IMED Hospitales valoramos su opinión",
-							 	"body": "¿Qué le ha parecido nuestro servicio?",
-							 	"sound": "default",
-							 	"content_available": true
-						 },
-						 "data": 
-						 {
-						 	"tipo_notificacion": "Encuesta",
-						 	"tipo_encuesta": tipoEncuesta,
-						 	"encuesta_id": "1",
-						 	"paciente_id": usuario,
-						 	"pregunta": "¿Cómo de satisfecho está con el servicio prestado?"
-						 }
-						});
+			"to": "dldVzba82Ow:APA91bERau2E0dMQmxFDt03TlycCCR_8f7fYW5JIveu30HrD-UWG9GYHG9sktw_uugG4ovXjRNP4fg-2tog-mfXaBbjQeQmz2JNuEFR_zoKggT5JzDE09s3_Na4-T97QXtvJANYo5i8k",
+			//"condition": _condition,
+			"collapseKey": _collapsedKey,
+			"apns-collapse-id": _collapsedKey,
+			"collapse_key": _collapsedKey,
+			"notification" : {
+				"title": "En IMED Hospitales valoramos su opinión",
+				"body": "¿Qué le ha parecido nuestro servicio?",
+				"sound": "default",
+				"content_available": true
+			},
+			"data": 
+			{
+				"tipo_notificacion": "Encuesta",
+				"tipo_encuesta": tipoEncuesta,
+				"encuesta_id": 7,
+				"paciente_id": usuario,
+				"pregunta": "¿Volvería a utilizar los servicios de IMED Hospitales?",
+				"respuestas": ["Si, sin duda", "No, ni pensarlo"],
+				"iconos": [""]
+			}
+		};
+
+		// Tipo encuesta 2, 5 respuestas cerradas
+		if (tipoEncuesta == 2)
+		{
+			param["data"]["respuesta_enlace"] = 0;
+			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
+			param["data"]["encuesta_id"] = 9;
+			param["data"]["pregunta"] = "¿Cómo de satisfecho está con el servicio prestado?";
+			param["data"]["respuestas"] = ["Muy satisfecho", "Satisfecho", "Neutral", "Insatisfecho", "Muy Insatisfecho"];
+			param["data"]["iconos"] = [""];
+			
+		}
+		// Encuesta de respuesta libre
+		else if(tipoEncuesta == 3)
+		{
+			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
+			param["data"]["encuesta_id"] = 10;
+			param["data"]["pregunta"] = "Por favor describa su experiencia con el servicio prestado. Escriba su respuesta en el siguiente recuadro (max. 300 carateres):";
+		}
+
+		var paramJson = JSON.stringify(param);
+
+		console.log(paramJson);
 
 		$.ajax({
 			type : 'POST',
@@ -364,7 +391,7 @@
 				Authorization : _authorization
 			},
 			contentType : _contentType,
-			data : param,
+			data : paramJson,
 			success : function(response) {
 				window.alert("Peticion enviada correctamente");
 				console.log(response);
