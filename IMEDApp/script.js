@@ -338,19 +338,20 @@
 		// Por defecto rellenamos el tipo encuesta 1 (2 respuestas cerradas)
 		var param = { 
 			"priority": _priority,
-			"to": "dldVzba82Ow:APA91bERau2E0dMQmxFDt03TlycCCR_8f7fYW5JIveu30HrD-UWG9GYHG9sktw_uugG4ovXjRNP4fg-2tog-mfXaBbjQeQmz2JNuEFR_zoKggT5JzDE09s3_Na4-T97QXtvJANYo5i8k",
-			//"condition": _condition,
+			//"to": "diO5WsFzm_Y:APA91bGcehduBExPZsgQHSjLlU2Y4CUxMFBqIqB-_I8DiTPw6cb_nByhTWFlkEI34MPMYbiyNp1dtEa0I3NVaiZaQZaw6EulGEcZQOdHvOvzcYuOvE1X9fpIqdRHKi3BLcUVSB5etdva",
+			"condition": _condition,
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
-			"notification" : {
-				"title": "En IMED Hospitales valoramos su opinión",
-				"body": "¿Qué le ha parecido nuestro servicio?",
-				"sound": "default",
+			"notification":
+			{
 				"content_available": true
 			},
 			"data": 
 			{
+				"title": "En IMED Hospitales valoramos su opinión",
+				"body": "¿Qué le ha parecido nuestro servicio?",
+				"sound": "default",
 				"tipo_notificacion": "Encuesta",
 				"tipo_encuesta": tipoEncuesta,
 				"encuesta_id": 7,
