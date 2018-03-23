@@ -14,6 +14,74 @@
 	_authorization = 'key=' + 'AAAAKZ_ED5U:APA91bF5CEKOZqHcvpKkINtl-rNOyquzjFdBBlzz4b1IwnJuIXRbhKwmALw-r4yUfaqClqLJCqD7jkPWMQQ8p_5qYUOsPECoV5xcg9Z8s4tDbf4lPYeI1-MpTokD6bmayb1MTpdOBbuM';
 
 
+	// Mensajes genericos
+	function EnviarGeneral(tipo) {
+
+		var param = { 
+			"priority": _priority,
+			//"to": "e1z0N5-K55I:APA91bFDwx74HxFwoAImW_UIuhuQuQ81Ct4I7HfPsFA_v5bWzzZ1mnaVPBbR7RdMMjks40f-B6Y2A5RUTR0bFZaJTh96WIxXEiiluVLoeJskIM_IDas0HR4oUBZ-9wFDiooNCNu4u4So",
+			"condition": _condition,
+			"collapseKey": _collapsedKey,
+			"apns-collapse-id": _collapsedKey,
+			"collapse_key": _collapsedKey,
+			"notificacion":
+			{
+				"body" : "Su retraso de cita se ha confirmado",
+				"title" : "AngiologÃ­a y cirugÃ­a vascular - IMED Elche",
+				"sound": "default",
+				"content_available": true
+			},
+			"data": 
+			{
+				"body" : "Su retraso de cita se ha confirmado",
+				"title" : "AngiologÃ­a y cirugÃ­a vascular - IMED Elche",
+				"tipo_notificacion": "General"
+			}
+		};
+
+		
+		if(tipo == 1) // Solo notificacion
+		{
+
+		}
+		else if(tipo == 2) // Notificacion + redireccion
+		{
+			param["data"]["pagina"] = "10";
+			param["data"]["pagina_forzada"] = "10";
+		}
+		else if(tipo == 3) // Notificacion + alerta
+		{
+			param["data"]["alerta"] = "Se ha confirmado el retraso de 10 minutos para su cita de AngiologÃ­a y cirugÃ­a vascular en IMED Elche a las 18:30";
+		}
+		else if(tipo == 4) // Notificacion + redireccion + alerta
+		{
+			param["data"]["pagina"] = "CitasMisCitas";
+			param["data"]["alerta"] = "Se ha confirmado el retraso de 10 minutos para su cita de AngiologÃ­a y cirugÃ­a vascular en IMED Elche a las 18:30";
+		}
+
+		var paramJson = JSON.stringify(param);
+
+		$.ajax({
+			type : 'POST',
+			url : _url,
+			headers : {
+				Authorization : _authorization
+			},
+			contentType : _contentType,
+			data : paramJson,
+			success : function(response) {
+				window.alert("Peticion enviada correctamente");
+				console.log(response);
+			},
+			error : function(xhr, status, error) {
+				window.alert("Hubo problema al realizar la peticion");
+				console.log(xhr.error);                   
+			}
+		}); 		
+	}
+	
+
+
 	/*El paciente llega a la clinica*/
 	function DarLlegada(usuario) {
 		var _title = "";
@@ -29,8 +97,8 @@
 		}
 		else if(usuario == "2003140"){
 			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -38,8 +106,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -108,8 +176,8 @@
 		}
 		else if(usuario == "2003140"){
 			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "26-87-88";
 			_refCita = "55-00-03";
@@ -117,8 +185,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "26-87-88";
 			_refCita = "55-00-03";
@@ -190,8 +258,8 @@
 		else if(usuario == "2003140")
 		{
 			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "55-00-03";
 			_refCita = "55-00-03";
@@ -199,8 +267,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "55-00-03";
 			_refCita = "55-00-03";
@@ -269,8 +337,8 @@
 		}
 		else if(usuario == "2003140"){
 			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -278,8 +346,8 @@
 		}
 		else if(usuario == "2000395"){
 			_title = "Lucas Moral Molinero";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
+			_especialidad = "CardiologÃ­a";
+			_especialista = "Dr. RubÃ©n MartÃ­nez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = "55-00-03";
@@ -349,14 +417,14 @@
 			},
 			"data": 
 			{
-				"title": "En IMED Hospitales valoramos su opinión",
-				"body": "¿Qué le ha parecido nuestro servicio?",
+				"title": "En IMED Hospitales valoramos su opiniÃ³n",
+				"body": "Â¿QuÃ© le ha parecido nuestro servicio?",
 				"sound": "default",
 				"tipo_notificacion": "Encuesta",
 				"tipo_encuesta": tipoEncuesta,
 				"encuesta_id": 7,
 				"paciente_id": usuario,
-				"pregunta": "¿Volvería a utilizar los servicios de IMED Hospitales?",
+				"pregunta": "Â¿VolverÃ­a a utilizar los servicios de IMED Hospitales?",
 				"respuestas": ["Si, sin duda", "No, ni pensarlo"],
 				"iconos": [""]
 			}
@@ -368,7 +436,7 @@
 			param["data"]["respuesta_enlace"] = 0;
 			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
 			param["data"]["encuesta_id"] = 9;
-			param["data"]["pregunta"] = "¿Cómo de satisfecho está con el servicio prestado?";
+			param["data"]["pregunta"] = "Â¿CÃ³mo de satisfecho estÃ¡ con el servicio prestado?";
 			param["data"]["respuestas"] = ["Muy satisfecho", "Satisfecho", "Neutral", "Insatisfecho", "Muy Insatisfecho"];
 			param["data"]["iconos"] = [""];
 			
