@@ -434,7 +434,7 @@
 			param["data"]["encuesta_id"] = 9;
 			param["data"]["pregunta"] = "¿Cómo de satisfecho está con el servicio prestado?";
 			param["data"]["respuestas"] = ["Muy satisfecho", "Satisfecho", "Neutral", "Insatisfecho", "Muy Insatisfecho"];
-			
+			param["data"]["colores"] = ["#0077CA", "#4DA9EE", "#AAAAAA", "#E1711E", "#CC3333"];
 		}
 		// Encuesta de respuesta libre
 		else if(tipoEncuesta == 3)
@@ -442,7 +442,6 @@
 			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
 			param["data"]["encuesta_id"] = 10;
 			param["data"]["pregunta"] = "Por favor describa su experiencia con el servicio prestado. Escriba su respuesta en el siguiente recuadro (max. 300 carateres):";
-			param["data"]["colores"] = ["#0077CA", "#4DA9EE", "#AAAAAA", "#E1711E", "#CC3333"];
 		}
 		// Encuesta de dos respuestas pero con iconos personalizados
 		else if(tipoEncuesta == 4)
@@ -454,7 +453,7 @@
 			param["data"]["iconos"] = ["http://rubenmartinez.es/imedapp/iconos_encuesta/hospital.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/telefono_alt.png"];
 			param["data"]["colores"] = ["#0077CA", "#E1711E"];
 		}
-		
+
 		var paramJson = JSON.stringify(param);
 
 		console.log(paramJson);
