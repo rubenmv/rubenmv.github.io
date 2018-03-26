@@ -422,8 +422,7 @@
 				"encuesta_id": 7,
 				"paciente_id": usuario,
 				"pregunta": "¿Volvería a utilizar los servicios de IMED Hospitales?",
-				"respuestas": ["Si, sin duda", "No, ni pensarlo"],
-				"iconos": [""]
+				"respuestas": ["Si, sin duda", "No, ni pensarlo"]
 			}
 		};
 
@@ -435,7 +434,6 @@
 			param["data"]["encuesta_id"] = 9;
 			param["data"]["pregunta"] = "¿Cómo de satisfecho está con el servicio prestado?";
 			param["data"]["respuestas"] = ["Muy satisfecho", "Satisfecho", "Neutral", "Insatisfecho", "Muy Insatisfecho"];
-			param["data"]["iconos"] = [""];
 			
 		}
 		// Encuesta de respuesta libre
@@ -444,6 +442,14 @@
 			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
 			param["data"]["encuesta_id"] = 10;
 			param["data"]["pregunta"] = "Por favor describa su experiencia con el servicio prestado. Escriba su respuesta en el siguiente recuadro (max. 300 carateres):";
+		}
+		// Encuesta de dos respuestas pero con iconos personalizados
+		else if(tipoEncuesta == 4)
+		{
+			param["data"]["encuesta_id"] = 11;
+			param["data"]["pregunta"] = "¿Cómo suele contactar con nosotros?";
+			param["data"]["respuestas"] = ["Acudiendo al centro", "Llamando por telefono"];
+			param["data"]["iconos"] = ["http://rubenmartinez.es/imedapp/iconos_encuesta/hospital.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/telefono_alt.png"];
 		}
 
 		var paramJson = JSON.stringify(param);
