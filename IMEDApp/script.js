@@ -39,12 +39,7 @@
 			}
 		};
 
-		
-		if(tipo == 1) // Solo notificacion
-		{
-
-		}
-		else if(tipo == 2) // Notificacion + redireccion
+		if(tipo == 2) // Notificacion + redireccion
 		{
 			param["data"]["pagina"] = "10";
 			param["data"]["pagina_forzada"] = "10";
@@ -406,20 +401,22 @@
 		// Por defecto rellenamos el tipo encuesta 1 (2 respuestas cerradas)
 		var param = { 
 			"priority": _priority,
-			//"to": "diO5WsFzm_Y:APA91bGcehduBExPZsgQHSjLlU2Y4CUxMFBqIqB-_I8DiTPw6cb_nByhTWFlkEI34MPMYbiyNp1dtEa0I3NVaiZaQZaw6EulGEcZQOdHvOvzcYuOvE1X9fpIqdRHKi3BLcUVSB5etdva",
+			//"to": "d3kUTucndCk:APA91bF_kNDUE4SXof-L9Hgg1p93MYDzCc5oQE2u7wAPc72UQIXJ5Ag2QgjMnV1QPkNgsCFeqiaUa3yGDtVrM7sXczZ8knRZO68WEVgoi8vgIe-at2g58vWdDjVcSMEAixMyNGuofd8S",
 			"condition": _condition,
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
 			"notification":
 			{
+				"title": "En IMED Hospitales valoramos su opinión",
+				"body": "¿Qué le ha parecido nuestro servicio?",
+				"sound": "default",
 				"content_available": true
 			},
 			"data": 
 			{
 				"title": "En IMED Hospitales valoramos su opinión",
 				"body": "¿Qué le ha parecido nuestro servicio?",
-				"sound": "default",
 				"tipo_notificacion": "Encuesta",
 				"tipo_encuesta": tipoEncuesta,
 				"encuesta_id": 7,
