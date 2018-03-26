@@ -446,6 +446,7 @@
 		// Encuesta de dos respuestas pero con iconos personalizados
 		else if(tipoEncuesta == 4)
 		{
+			param["data"]["tipo_encuesta"] = 1;
 			param["data"]["encuesta_id"] = 11;
 			param["data"]["pregunta"] = "¿Cómo suele contactar con nosotros?";
 			param["data"]["respuestas"] = ["Acudiendo al centro", "Llamando por telefono"];
