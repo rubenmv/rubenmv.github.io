@@ -19,8 +19,8 @@
 
 		var param = { 
 			"priority": _priority,
-			//"to": "e1z0N5-K55I:APA91bFDwx74HxFwoAImW_UIuhuQuQ81Ct4I7HfPsFA_v5bWzzZ1mnaVPBbR7RdMMjks40f-B6Y2A5RUTR0bFZaJTh96WIxXEiiluVLoeJskIM_IDas0HR4oUBZ-9wFDiooNCNu4u4So",
-			"condition": _condition,
+			"to": "eLMueDq31V8:APA91bGvV87ADYgPZrrchGXjczRST_LJekl1MUjHiinNuj_jozxllLnu7xfw9DGeHbcLA68H7Ad0PNKEsh84x1O5zU3OS_fCJCMjmml4sWhdV6JJ-1EKkkKdustb4zH4aNFvXYTqomQV",
+			//"condition": _condition,
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
@@ -55,6 +55,8 @@
 		}
 
 		var paramJson = JSON.stringify(param);
+
+		console.log(paramJson);
 
 		$.ajax({
 			type : 'POST',
@@ -396,7 +398,10 @@
 	}
 
 
-	function EnviarEncuesta(usuario, tipoEncuesta) {
+	function EnviarEncuesta(usuario, numeroEncuesta) {
+
+		// La encuesta 5 es de tipo 2, respuesta libre
+		var tipoEncuesta = numeroEncuesta == 5 ? 2 : 1;
 
 		// Por defecto rellenamos el tipo encuesta 1 (2 respuestas cerradas)
 		var param = { 
@@ -426,8 +431,33 @@
 			}
 		};
 
-		// Tipo encuesta 2, 5 respuestas cerradas
-		if (tipoEncuesta == 2)
+		// Encuesta cerrada 2 respuestas
+		if (numeroEncuesta == 1)
+		{
+			param["data"]["encuesta_id"] = 11;
+			param["data"]["pregunta"] = "¿Cómo suele contactar con nosotros?";
+			param["data"]["respuestas"] = ["Acudiendo al centro", "Llamando por telefono"];
+			param["data"]["iconos"] = ["http://rubenmartinez.es/imedapp/iconos_encuesta/hospital.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/telefono_alt.png"];
+			param["data"]["colores"] = ["#0077CA", "#E1711E"];
+		}
+		// Encuesta cerrada 3 respuestas
+		else if (numeroEncuesta == 2)
+		{
+			param["data"]["encuesta_id"] = 11;
+			param["data"]["pregunta"] = "¿Cómo suele pedir cita?";
+			param["data"]["respuestas"] = ["Acudiendo al centro", "Llamando por telefono", "A través de esta App"];
+			param["data"]["iconos"] = ["http://rubenmartinez.es/imedapp/iconos_encuesta/hospital.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/telefono_alt.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/app.png"];
+			param["data"]["colores"] = ["#0077CA", "#E1711E", "#f5e5c6"];
+		}
+		// Encuesta cerrada 4 respuestas
+		else if(numeroEncuesta == 3)
+		{
+			param["data"]["encuesta_id"] = 11;
+			param["data"]["pregunta"] = "¿Cómo calificaría su experiencia con nosotros?";
+			param["data"]["respuestas"] = ["Perfecta", "Mejorable", "Mala", "Horrible"];
+		}
+		// Encuesta cerrada 5 respuestas
+		else if(numeroEncuesta == 4)
 		{
 			param["data"]["respuesta_enlace"] = 0;
 			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
@@ -436,22 +466,12 @@
 			param["data"]["respuestas"] = ["Muy satisfecho", "Satisfecho", "Neutral", "Insatisfecho", "Muy Insatisfecho"];
 			param["data"]["colores"] = ["#0077CA", "#4DA9EE", "#AAAAAA", "#E1711E", "#CC3333"];
 		}
-		// Encuesta de respuesta libre
-		else if(tipoEncuesta == 3)
+		// Respuesta libre
+		else if(numeroEncuesta == 5)
 		{
-			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
+param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
 			param["data"]["encuesta_id"] = 10;
 			param["data"]["pregunta"] = "Por favor describa su experiencia con el servicio prestado. Escriba su respuesta en el siguiente recuadro (max. 300 carateres):";
-		}
-		// Encuesta de dos respuestas pero con iconos personalizados
-		else if(tipoEncuesta == 4)
-		{
-			param["data"]["tipo_encuesta"] = 1;
-			param["data"]["encuesta_id"] = 11;
-			param["data"]["pregunta"] = "¿Cómo suele contactar con nosotros?";
-			param["data"]["respuestas"] = ["Acudiendo al centro", "Llamando por telefono"];
-			param["data"]["iconos"] = ["http://rubenmartinez.es/imedapp/iconos_encuesta/hospital.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/telefono_alt.png"];
-			param["data"]["colores"] = ["#0077CA", "#E1711E"];
 		}
 
 		var paramJson = JSON.stringify(param);
