@@ -406,8 +406,8 @@
 		// Por defecto rellenamos el tipo encuesta 1 (2 respuestas cerradas)
 		var param = { 
 			"priority": _priority,
-			//"to": "d3kUTucndCk:APA91bF_kNDUE4SXof-L9Hgg1p93MYDzCc5oQE2u7wAPc72UQIXJ5Ag2QgjMnV1QPkNgsCFeqiaUa3yGDtVrM7sXczZ8knRZO68WEVgoi8vgIe-at2g58vWdDjVcSMEAixMyNGuofd8S",
-			"condition": _condition,
+			"to": "fucuofyQjt8:APA91bGghJMUlcJhQeDPwdrpyYxTr2WmXHvHe8Tck4hXW3iCN74t18hJ8X5gbjn9MvFaMTyc86JV56JnVtBGteBvMXRe5t_vTIgF7aK7K1vlTRUPVDFaf8r7EcERK60295eCkFM5YOHu",
+			// "condition": _condition,
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
@@ -415,8 +415,7 @@
 			{
 				"title": "En IMED Hospitales valoramos su opinión",
 				"body": "¿Qué le ha parecido nuestro servicio?",
-				"sound": "default",
-				"content_available": true
+				"sound": "default"
 			},
 			"data": 
 			{
@@ -424,16 +423,14 @@
 				"body": "¿Qué le ha parecido nuestro servicio?",
 				"tipo_notificacion": "Encuesta",
 				"tipo_encuesta": tipoEncuesta,
-				"encuesta_id": 7,
-				"paciente_id": usuario,
-				"pregunta": "¿Volvería a utilizar los servicios de IMED Hospitales?",
-				"respuestas": ["Si, sin duda", "No, ni pensarlo"]
+				"encuesta_id": 7
 			}
 		};
 
 		// Encuesta cerrada 2 respuestas
 		if (numeroEncuesta == 1)
 		{
+			param["data"]["paciente_id"] = usuario;
 			param["data"]["encuesta_id"] = 11;
 			param["data"]["pregunta"] = "¿Cómo suele contactar con nosotros?";
 			param["data"]["respuestas"] = ["Acudiendo al centro", "Llamando por telefono"];
@@ -447,7 +444,7 @@
 			param["data"]["pregunta"] = "¿Cómo suele pedir cita?";
 			param["data"]["respuestas"] = ["Acudiendo al centro", "Llamando por telefono", "A través de esta App"];
 			param["data"]["iconos"] = ["http://rubenmartinez.es/imedapp/iconos_encuesta/hospital.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/telefono_alt.png", "http://rubenmartinez.es/imedapp/iconos_encuesta/app.png"];
-			param["data"]["colores"] = ["#0077CA", "#E1711E", "#f5e5c6"];
+			param["data"]["colores"] = ["#0077CA", "#E1711E", "#486D27"];
 		}
 		// Encuesta cerrada 4 respuestas
 		else if(numeroEncuesta == 3)
