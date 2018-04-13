@@ -7,24 +7,41 @@
 	_especialidad = "Traumatologia y cirugia ortopedica",
 	_consulta = "16",
 	_turnoActual = "",
+	_usuario = "",
 	_refCita = "",
 	_turnosSiguientes = "",
 	_fechaCita = "14/03/2018 10:20",
 	_caducidad = 60000,
 	_authorization = 'key=' + 'AAAAKZ_ED5U:APA91bF5CEKOZqHcvpKkINtl-rNOyquzjFdBBlzz4b1IwnJuIXRbhKwmALw-r4yUfaqClqLJCqD7jkPWMQQ8p_5qYUOsPECoV5xcg9Z8s4tDbf4lPYeI1-MpTokD6bmayb1MTpdOBbuM';
 
+	// Timeout del Toast, se hace global para poder cancelarlo al lanzar un nuevo toast mientras hay otro activo
+	var timeout;
+	function ShowToast(mensaje) {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+    // Cerramos el actual si lo hubiera y cancelamos el timeout
+    x.className.replace("show", "");
+    clearTimeout(timeout);
+
+    // Add the "show" class to DIV
+    x.className = "show";
+    x.textContent = mensaje;
+
+    // After 3 seconds, remove the show class from DIV
+    timeout = setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
 
 	// Mensajes genericos
 	function EnviarGeneral(tipo) {
 
 		var param = { 
 			"priority": _priority,
-			"to": "eLMueDq31V8:APA91bGvV87ADYgPZrrchGXjczRST_LJekl1MUjHiinNuj_jozxllLnu7xfw9DGeHbcLA68H7Ad0PNKEsh84x1O5zU3OS_fCJCMjmml4sWhdV6JJ-1EKkkKdustb4zH4aNFvXYTqomQV",
+			"to": "cQqxDTDYO_A:APA91bFiBJe2acB2cdabhAnm0MxvaXCxOVeu0qLcGTZYrxBvzBdvagO8eaUNYW7QBz8u7sZ--e8K2tuWFkV3bQA5aNBsg73cyp8Y2QREuGZpPEEgLOXeL_J1mu17LZnOvolZpIoHkPvi",
 			//"condition": _condition,
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
-			"notificacion":
+			"notification":
 			{
 				"body" : "Su retraso de cita se ha confirmado",
 				"title" : "Angiología y cirugía vascular - IMED Elche",
@@ -33,16 +50,14 @@
 			},
 			"data": 
 			{
-				"body" : "Su retraso de cita se ha confirmado",
-				"title" : "Angiología y cirugía vascular - IMED Elche",
+				"silent": true,
 				"tipo_notificacion": "General"
 			}
 		};
 
 		if(tipo == 2) // Notificacion + redireccion
 		{
-			param["data"]["pagina"] = "10";
-			param["data"]["pagina_forzada"] = "10";
+			param["data"]["pagina"] = "CitasMisCitas";
 		}
 		else if(tipo == 3) // Notificacion + alerta
 		{
@@ -67,11 +82,11 @@
 			contentType : _contentType,
 			data : paramJson,
 			success : function(response) {
-				window.alert("Peticion enviada correctamente");
+				ShowToast("Peticion enviada correctamente");
 				console.log(response);
 			},
 			error : function(xhr, status, error) {
-				window.alert("Hubo problema al realizar la peticion");
+				ShowToast("Hubo problema al realizar la peticion");
 				console.log(xhr.error);                   
 			}
 		}); 		
@@ -80,34 +95,38 @@
 
 
 	/*El paciente llega a la clinica*/
-	function DarLlegada(usuario) {
+	function DarLlegada(refCita) {
 		var _title = "";
-		if (usuario == "2010990")
+		if (refCita == "10-20-33")
 		{
+			_usuario = "2010990";
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
 			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-20-20";
-			_refCita = "10-20-33";
+			_refCita = refCita;
 			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2003140"){
-			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
-			_consulta = "03";
-			_turnoActual = "35-45-26";
-			_refCita = "55-00-03";
-			_turnosSiguientes = "26-87-88, 55-00-03, 31-52-28, 66-04-64";
+		else if (refCita == "55-22-33")
+		{
+			_usuario = "2010990";
+			_title = "Vicent Chova Pons";
+			_especialista = "Dr. Pepito Grillo";
+			_especialidad = "Psiquiatría";
+			_consulta = "16";
+			_turnoActual = "22-56-70";
+			_refCita = refCita;
+			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2000395"){
+		else if(refCita == "55-00-03"){
+			_usuario = "2000395";
 			_title = "Lucas Moral Molinero";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
-			_refCita = "55-00-03";
+			_refCita = refCita;
 			_turnosSiguientes = "26-87-88, 55-00-03, 31-52-28, 66-04-64";
 		}
 
@@ -125,19 +144,23 @@
 			},
 			"data": 
 			{
+				"timestamp": "2018-04-11T10:55:000Z",
 				"llegada": true,
 				"fecha_cita": _fechaCita,
 				"caducidad": _caducidad,
-				"paciente_id": usuario,
+				"paciente_id": _usuario,
 				"tipo_notificacion": "SalaDeEspera",
 				"turno": _turnoActual,
 				"ref_cita": _refCita,
 				"especialidad": _especialidad,
 				"especialista": _especialista,
 				"consulta": _consulta,
-				"turnos_siguientes": _turnosSiguientes
+				"turnos_siguientes": _turnosSiguientes,
+				"mensaje_turno": "Le quedan 2 turnos para entrar a consulta"
 			}
 		});
+
+		console.log(param);
 
 		$.ajax({
 			type : 'POST',
@@ -148,45 +171,49 @@
 			contentType : _contentType,
 			data : param,
 			success : function(response) {
-				window.alert("Peticion enviada correctamente");
+				ShowToast("Peticion enviada correctamente");
 				console.log(response);
 			},
 			error : function(xhr, status, error) {
-				window.alert("Hubo problema al realizar la peticion");
+				ShowToast("Hubo problema al realizar la peticion");
 				console.log(xhr.error);                   
 			}
 		}); 
 	}
 
 	/*Pasa un turno*/
-	function SiguienteTurno(usuario) {
+	function SiguienteTurno(refCita) {
 		var _title = "";
-		if (usuario == "2010990")
+		if (refCita == "10-20-33")
 		{
+			_usuario = "2010990";
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
 			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-25-04";
-			_refCita = "10-20-33";
+			_refCita = refCita;
 			_turnosSiguientes = "10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2003140"){
-			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
-			_consulta = "03";
-			_turnoActual = "26-87-88";
-			_refCita = "55-00-03";
-			_turnosSiguientes = "55-00-03, 31-52-28, 66-04-64";
+		else if (refCita == "55-22-33")
+		{
+			_usuario = "2010990";
+			_title = "Vicent Chova Pons";
+			_especialista = "Dr. Pepito Grillo";
+			_especialidad = "Psiquiatría";
+			_consulta = "16";
+			_turnoActual = "22-56-70";
+			_refCita = refCita;
+			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2000395"){
+		else if(refCita == "55-00-03"){
+			_usuario = "2000395";
 			_title = "Lucas Moral Molinero";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "26-87-88";
-			_refCita = "55-00-03";
+			_refCita = refCita;
 			_turnosSiguientes = "55-00-03, 31-52-28, 66-04-64";
 		}
 
@@ -207,16 +234,19 @@
 				"llegada": true,
 				"fecha_cita": _fechaCita,
 				"caducidad": _caducidad,
-				"paciente_id": usuario,
+				"paciente_id": _usuario,
 				"tipo_notificacion": "SalaDeEspera",
 				"turno": _turnoActual,
 				"ref_cita": _refCita,
 				"especialidad": _especialidad,
 				"especialista": _especialista,
 				"consulta": _consulta,
-				"turnos_siguientes": _turnosSiguientes
+				"turnos_siguientes": _turnosSiguientes,
+				"mensaje_turno": "Le queda 1 turno para entrar a consulta"
 			}
 		});
+
+		console.log(param);
 
 		$.ajax({
 			type : 'POST',
@@ -227,11 +257,11 @@
 			contentType : _contentType,
 			data : param,
 			success : function(response) {
-				window.alert("Peticion enviada correctamente");
+				ShowToast("Peticion enviada correctamente");
 				console.log(response);
 			},
 			error : function(xhr, status, error) {
-				window.alert("Hubo problema al realizar la peticion");
+				ShowToast("Hubo problema al realizar la peticion");
 				console.log(xhr.error);                   
 			}
 		}); 
@@ -239,36 +269,39 @@
 
 
 	/*Turno del paciente*/
-	function DarTurno(usuario) {
+	function DarTurno(refCita) {
 		var _title = "";
 
-		if (usuario == "2010990")
+		if (refCita == "10-20-33")
 		{
+			_usuario = "2010990";
 			_title = "Vicent Chova Pons";
 			_especialista = "Dra. Eugenia Margarita";
 			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
-			_turnoActual = "10-20-33";
-			_refCita = "10-20-33";
+			_turnoActual = refCita;
+			_refCita = refCita;
 			_turnosSiguientes = "Sin llegada, 91-55-24";
 		}
-		else if(usuario == "2003140")
+		else if (refCita == "55-22-33")
 		{
-			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
-			_consulta = "03";
-			_turnoActual = "55-00-03";
-			_refCita = "55-00-03";
+			_usuario = "2010990";
+			_title = "Vicent Chova Pons";
+			_especialista = "Dr. Pepito Grillo";
+			_especialidad = "Psiquiatría";
+			_consulta = "16";
+			_turnoActual = refCita;
+			_refCita = refCita;
 			_turnosSiguientes = "31-52-28, 66-04-64";
 		}
-		else if(usuario == "2000395"){
+		else if(refCita == "55-00-03"){
+			_usuario = "2000395";
 			_title = "Lucas Moral Molinero";
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
-			_turnoActual = "55-00-03";
-			_refCita = "55-00-03";
+			_turnoActual = refCita;
+			_refCita = refCita;
 			_turnosSiguientes = "31-52-28, 66-04-64";
 		}
 
@@ -289,16 +322,19 @@
 				"llegada": true,
 				"fecha_cita": _fechaCita,
 				"caducidad": _caducidad,
-				"paciente_id": usuario,
+				"paciente_id": _usuario,
 				"tipo_notificacion": "SalaDeEspera",
 				"turno": _turnoActual,
 				"ref_cita": _refCita,
 				"especialidad": _especialidad,
 				"especialista": _especialista,
 				"consulta": _consulta,
-				"turnos_siguientes": _turnosSiguientes
+				"turnos_siguientes": _turnosSiguientes,
+				"mensaje_turno": "Su turno, puede pasar a la consulta."
 			}
 		});
+
+		console.log(param);
 
 		$.ajax({
 			type : 'POST',
@@ -309,46 +345,36 @@
 			contentType : _contentType,
 			data : param,
 			success : function(response) {
-				window.alert("Peticion enviada correctamente");
+				ShowToast("Peticion enviada correctamente");
 				console.log(response);
 			},
 			error : function(xhr, status, error) {
-				window.alert("Hubo problema al realizar la peticion");
+				ShowToast("Hubo problema al realizar la peticion");
 				console.log(xhr.error);                   
 			}
 		}); 
 	}
 
 	/*Salida del paciente*/
-	function DarSalida(usuario) {
+	function DarSalida(refCita) {
 		var _title = "";
-		if (usuario == "2010990")
+
+		if (refCita == "10-20-33")
 		{
+			_usuario = "2010990";
 			_title = "Vicent Chova Pons";
-			_especialista = "Dra. Eugenia Margarita";
-			_especialidad = "Traumatologia y cirugia ortopedica";
-			_consulta = "16";
-			_turnoActual = "10-20-20";
-			_refCita = "10-20-33";
-			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
+			_refCita = refCita;
 		}
-		else if(usuario == "2003140"){
-			_title = "Adela Donate Escribano";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
-			_consulta = "03";
-			_turnoActual = "35-45-26";
-			_refCita = "55-00-03";
-			_turnosSiguientes = "26-87-88, 55-00-03, 31-52-28, 66-04-64";
+		else if (refCita == "55-22-33")
+		{
+			_usuario = "2010990";
+			_title = "Vicent Chova Pons";
+			_refCita = refCita;
 		}
-		else if(usuario == "2000395"){
+		else if(refCita == "55-00-03"){
+			_usuario = "2000395";
 			_title = "Lucas Moral Molinero";
-			_especialidad = "Cardiología";
-			_especialista = "Dr. Rubén Martínez Vilar";
-			_consulta = "03";
-			_turnoActual = "35-45-26";
-			_refCita = "55-00-03";
-			_turnosSiguientes = "26-87-88, 55-00-03, 31-52-28, 66-04-64";
+			_refCita = refCita;
 		}
 
 		var param = JSON.stringify({ 
@@ -364,19 +390,14 @@
 			"data": 
 			{
 				"llegada": false,
-				"fecha_cita": _fechaCita,
-				"caducidad": _caducidad,
 				"silent": true,
-				"paciente_id": usuario,
 				"tipo_notificacion": "SalaDeEspera",
-				"turno": _turnoActual,
 				"ref_cita": _refCita,
-				"especialidad": _especialidad,
-				"especialista": _especialista,
-				"consulta": _consulta,
-				"turnos_siguientes": _turnosSiguientes
+				"paciente_id": _usuario
 			}
 		});
+
+		console.log(param);
 
 		$.ajax({
 			type : 'POST',
@@ -387,11 +408,11 @@
 			contentType : _contentType,
 			data : param,
 			success : function(response) {
-				window.alert("Peticion enviada correctamente");
+				ShowToast("Peticion enviada correctamente");
 				console.log(response);
 			},
 			error : function(xhr, status, error) {
-				window.alert("Hubo problema al realizar la peticion");
+				ShowToast("Hubo problema al realizar la peticion");
 				console.log(xhr.error);                   
 			}
 		}); 
@@ -406,16 +427,15 @@
 		// Por defecto rellenamos el tipo encuesta 1 (2 respuestas cerradas)
 		var param = { 
 			"priority": _priority,
-			"to": "fucuofyQjt8:APA91bGghJMUlcJhQeDPwdrpyYxTr2WmXHvHe8Tck4hXW3iCN74t18hJ8X5gbjn9MvFaMTyc86JV56JnVtBGteBvMXRe5t_vTIgF7aK7K1vlTRUPVDFaf8r7EcERK60295eCkFM5YOHu",
-			// "condition": _condition,
+			//"to": "fucuofyQjt8:APA91bGghJMUlcJhQeDPwdrpyYxTr2WmXHvHe8Tck4hXW3iCN74t18hJ8X5gbjn9MvFaMTyc86JV56JnVtBGteBvMXRe5t_vTIgF7aK7K1vlTRUPVDFaf8r7EcERK60295eCkFM5YOHu",
+			"condition": _condition,
 			"collapseKey": _collapsedKey,
 			"apns-collapse-id": _collapsedKey,
 			"collapse_key": _collapsedKey,
 			"notification":
 			{
-				"title": "En IMED Hospitales valoramos su opinión",
-				"body": "¿Qué le ha parecido nuestro servicio?",
-				"sound": "default"
+				//"sound": "default",
+				"content_available": true
 			},
 			"data": 
 			{
@@ -466,7 +486,7 @@
 		// Respuesta libre
 		else if(numeroEncuesta == 5)
 		{
-param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
+			param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=ChIJPSmGvlsEYg0R3Qw1Iir0pBw";
 			param["data"]["encuesta_id"] = 10;
 			param["data"]["pregunta"] = "Por favor describa su experiencia con el servicio prestado. Escriba su respuesta en el siguiente recuadro (max. 300 carateres):";
 		}
@@ -484,11 +504,11 @@ param["data"]["enlace"] = "https://search.google.com/local/writereview?placeid=C
 			contentType : _contentType,
 			data : paramJson,
 			success : function(response) {
-				window.alert("Peticion enviada correctamente");
+				ShowToast("Peticion enviada correctamente");
 				console.log(response);
 			},
 			error : function(xhr, status, error) {
-				window.alert("Hubo problema al realizar la peticion");
+				ShowToast("Hubo problema al realizar la peticion");
 				console.log(xhr.error);                   
 			}
 		}); 
