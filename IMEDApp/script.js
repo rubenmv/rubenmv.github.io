@@ -1,9 +1,13 @@
 	var _contentType = 'application/json;charset=utf-8',
+	_nombre2010990 = "WGFASN BXQY DFRRF QMQO",
+	_nombre2000395 = "MSFWX NMUWQ NMOESYYG",
 	_priority = "high",
 	_collapsedKey = "IMED",
 	_condition = "'general' in topics",
 	_url = "https://fcm.googleapis.com/fcm/send",
-	_especialista = "Dra. Eugenia Margarita",
+	_especialista1 = "Dra. Maria Romeral Gracia",
+	_especialista2 = "Dr. Jose Grillo",
+	_especialista = _especialista1,
 	_especialidad = "Traumatologia y cirugia ortopedica",
 	_consulta = "16",
 	_turnoActual = "",
@@ -97,37 +101,40 @@
 	/*El paciente llega a la clinica*/
 	function DarLlegada(refCita) {
 		var _title = "";
-		if (refCita == "10-20-33")
+		if (refCita == "10-20-54")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
-			_especialista = "Dra. Eugenia Margarita";
+			_title = _nombre2010990;
+			_especialista = _especialista1;
 			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-20-20";
 			_refCita = refCita;
-			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
+			_turnosSiguientes = "23-25-55, 10-20-54, Sin llegada, 91-55-24";
+			_fechaCita = "14/03/2018 10:20";
 		}
 		else if (refCita == "55-22-33")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
-			_especialista = "Dr. Pepito Grillo";
+			_title = _nombre2010990;
+			_especialista = _especialista2;
 			_especialidad = "Psiquiatría";
 			_consulta = "16";
 			_turnoActual = "22-56-70";
 			_refCita = refCita;
-			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
+			_turnosSiguientes = "23-25-55, 10-20-54, Sin llegada, 91-55-24";
+			_fechaCita = "14/03/2018 11:00";
 		}
 		else if(refCita == "55-00-03"){
 			_usuario = "2000395";
-			_title = "Lucas Moral Molinero";
+			_title = _nombre2000395;
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "35-45-26";
 			_refCita = refCita;
 			_turnosSiguientes = "26-87-88, 55-00-03, 31-52-28, 66-04-64";
+			_fechaCita = "14/03/2018 12:15";
 		}
 
 		var param = JSON.stringify({ 
@@ -184,37 +191,40 @@
 	/*Pasa un turno*/
 	function SiguienteTurno(refCita) {
 		var _title = "";
-		if (refCita == "10-20-33")
+		if (refCita == "10-20-54")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
-			_especialista = "Dra. Eugenia Margarita";
+			_title = _nombre2010990;
+			_especialista = _especialista1;
 			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = "10-25-04";
 			_refCita = refCita;
-			_turnosSiguientes = "10-20-33, Sin llegada, 91-55-24";
+			_turnosSiguientes = "10-20-54, Sin llegada, 91-55-24";
+			_fechaCita = "14/03/2018 10:20";
 		}
 		else if (refCita == "55-22-33")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
-			_especialista = "Dr. Pepito Grillo";
+			_title = _nombre2010990;
+			_especialista = _especialista2;
 			_especialidad = "Psiquiatría";
 			_consulta = "16";
 			_turnoActual = "22-56-70";
 			_refCita = refCita;
-			_turnosSiguientes = "23-25-55, 10-20-33, Sin llegada, 91-55-24";
+			_turnosSiguientes = "23-25-55, 10-20-54, Sin llegada, 91-55-24";
+			_fechaCita = "14/03/2018 11:00";
 		}
 		else if(refCita == "55-00-03"){
 			_usuario = "2000395";
-			_title = "Lucas Moral Molinero";
+			_title = _nombre2000395;
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = "26-87-88";
 			_refCita = refCita;
 			_turnosSiguientes = "55-00-03, 31-52-28, 66-04-64";
+			_fechaCita = "14/03/2018 12:15";
 		}
 
 		var param = JSON.stringify({ 
@@ -272,37 +282,40 @@
 	function DarTurno(refCita) {
 		var _title = "";
 
-		if (refCita == "10-20-33")
+		if (refCita == "10-20-54")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
-			_especialista = "Dra. Eugenia Margarita";
+			_title = _nombre2010990;
+			_especialista = _especialista1;
 			_especialidad = "Traumatologia y cirugia ortopedica";
 			_consulta = "16";
 			_turnoActual = refCita;
 			_refCita = refCita;
 			_turnosSiguientes = "Sin llegada, 91-55-24";
+			_fechaCita = "14/03/2018 10:20";
 		}
 		else if (refCita == "55-22-33")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
-			_especialista = "Dr. Pepito Grillo";
+			_title = _nombre2010990;
+			_especialista = _especialista2;
 			_especialidad = "Psiquiatría";
 			_consulta = "16";
 			_turnoActual = refCita;
 			_refCita = refCita;
 			_turnosSiguientes = "31-52-28, 66-04-64";
+			_fechaCita = "14/03/2018 11:00";
 		}
 		else if(refCita == "55-00-03"){
 			_usuario = "2000395";
-			_title = "Lucas Moral Molinero";
+			_title = _nombre2000395;
 			_especialidad = "Cardiología";
 			_especialista = "Dr. Rubén Martínez Vilar";
 			_consulta = "03";
 			_turnoActual = refCita;
 			_refCita = refCita;
 			_turnosSiguientes = "31-52-28, 66-04-64";
+			_fechaCita = "14/03/2018 12:15";
 		}
 
 		var param = JSON.stringify({ 
@@ -359,21 +372,21 @@
 	function DarSalida(refCita) {
 		var _title = "";
 
-		if (refCita == "10-20-33")
+		if (refCita == "10-20-54")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
+			_title = _nombre2010990;
 			_refCita = refCita;
 		}
 		else if (refCita == "55-22-33")
 		{
 			_usuario = "2010990";
-			_title = "Vicent Chova Pons";
+			_title = _nombre2010990;
 			_refCita = refCita;
 		}
 		else if(refCita == "55-00-03"){
 			_usuario = "2000395";
-			_title = "Lucas Moral Molinero";
+			_title = _nombre2000395;
 			_refCita = refCita;
 		}
 
